@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa 1919 · Tequila Blanco — Producción Artesanal · Amatitán, Jalisco</title>
+<meta name="description" content="Casa 1919 — Tequila Blanco de producción artesanal. 100% agave de madurez extrema. Tres generaciones de oficio en Amatitán, Jalisco, México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  --indigo:     #072e52;
+  --indigo-2:   #0f3a63;
+  --agave:      #203a54;
+  --acero:      #3d6189;
+  --cielo:      #b7d5e8;
+  --cielo-2:    #d0dfe8;
+  --bruma:      #eaf1f6;
+  --blanco:     #fbfdfe;
+  --tinta:      #0a2240;
+  --tinta-s:    #3c5a78;
+  --linea:      rgba(7,46,82,.14);
+  --linea-c:    rgba(255,255,255,.22);
+  --display:    'Cinzel', serif;
+  --serif:      'Cormorant Garamond', serif;
+  --sans:       'Jost', sans-serif;
+  --ease-out:   cubic-bezier(.16,1,.3,1);
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  background: var(--bruma);
+  color: var(--tinta);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+::selection { background:var(--indigo); color:var(--blanco); }
+img { display:block; max-width:100%; }
+a { text-decoration:none; }
+
+/* paper grain overlay */
+body::after {
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none; z-index:9999;
+  opacity:.025; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* agave svg helper */
+.agave { width:1.92em; height:1em; display:inline-block; color:inherit; vertical-align:middle; }
+
+/* ============================================================
+   AGE GATE
+   ============================================================ */
+.age-gate {
+  position:fixed; inset:0; z-index:10000;
+  background:var(--indigo);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  transition:opacity .7s ease;
+}
+.age-gate.hiding { opacity:0; pointer-events:none; }
+.age-gate-bg {
+  position:absolute; inset:0;
+  background-image:url("assets/campo-agave.jpg");
+  background-size:cover; background-position:center;
+  opacity:.07;
+}
+.age-gate-grain {
+  position:absolute; inset:0; pointer-events:none;
+  opacity:.04; mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.age-gate-lang {
+  position:absolute; top:24px; right:clamp(20px,4vw,48px);
+  display:flex; border:1px solid var(--linea-c); border-radius:999px; overflow:hidden;
+}
+.age-gate-lang button {
+  background:none; border:none; cursor:pointer;
+  font-family:var(--sans); font-size:9px; letter-spacing:.14em;
+  padding:6px 11px; color:rgba(255,255,255,.55); transition:.3s;
+}
+.age-gate-lang button.on { background:var(--blanco); color:var(--indigo); }
+.age-gate-inner {
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; padding:40px 32px; max-width:500px; width:100%;
+}
+.age-gate-logo {
+  font-size:48px; color:var(--blanco); margin-bottom:20px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .1s forwards;
+}
+.age-gate-title {
+  font-family:var(--display); font-weight:600; font-size:clamp(22px,4vw,34px);
+  letter-spacing:.34em; color:var(--blanco); margin-bottom:6px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .22s forwards;
+}
+.age-gate-rule {
+  display:flex; align-items:center; gap:14px; margin:12px 0 20px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .34s forwards;
+}
+.age-gate-rule span { height:1px; width:clamp(30px,6vw,60px); background:rgba(255,255,255,.28); }
+.age-gate-rule i {
+  font-family:var(--sans); font-style:normal; font-size:8px;
+  letter-spacing:.46em; text-transform:uppercase; color:var(--cielo); opacity:.8;
+}
+.age-gate-subtitle {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(15px,1.8vw,18px); color:rgba(215,235,248,.7);
+  line-height:1.65; margin-bottom:30px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .46s forwards;
+}
+.age-gate-question {
+  font-family:var(--display); font-weight:400; font-size:clamp(17px,2.2vw,22px);
+  letter-spacing:.12em; color:var(--blanco); margin-bottom:28px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .56s forwards;
+}
+.age-gate-btns {
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
+  opacity:0; animation:fadeup .9s var(--ease-out) .68s forwards;
+}
+.age-btn-yes {
+  display:inline-block; background:var(--blanco); color:var(--indigo);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.28em;
+  text-transform:uppercase; padding:14px 30px; border:none;
+  cursor:pointer; border-radius:1px; transition:background .35s;
+}
+.age-btn-yes:hover { background:var(--cielo-2); }
+.age-btn-no {
+  display:inline-block; background:none; color:var(--blanco);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.28em;
+  text-transform:uppercase; padding:14px 30px;
+  border:1px solid rgba(255,255,255,.36); cursor:pointer; border-radius:1px;
+  transition:border-color .35s, background .35s;
+}
+.age-btn-no:hover { border-color:rgba(255,255,255,.65); background:rgba(255,255,255,.06); }
+.age-gate-note {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.1em;
+  color:rgba(255,255,255,.28); margin-top:22px; line-height:1.7;
+  opacity:0; animation:fadeup .9s var(--ease-out) .8s forwards;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:24px clamp(20px,5vw,64px);
+  transition:background .5s, padding .5s, border-color .5s, backdrop-filter .5s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled {
+  background:rgba(251,253,254,.9);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--linea);
+  padding-top:14px; padding-bottom:14px;
+}
+.brand { display:flex; align-items:center; gap:11px; color:var(--tinta); }
+.brand .agave { color:var(--indigo); font-size:26px; }
+.brand b { font-family:var(--display); font-weight:600; letter-spacing:.22em; font-size:15px; line-height:1; }
+.brand small { display:block; font-family:var(--sans); font-size:8px; letter-spacing:.38em; color:var(--tinta-s); margin-top:4px; text-transform:uppercase; }
+nav.light .brand, nav.light .nav-links a { color:var(--blanco); }
+nav.light .brand .agave { color:var(--blanco); }
+nav.light .brand small { color:rgba(255,255,255,.6); }
+nav.light .lang { border-color:var(--linea-c); }
+nav.light .lang button { color:rgba(255,255,255,.7); }
+nav.light .lang button.on { background:var(--blanco); color:var(--indigo); }
+.nav-links { display:flex; gap:clamp(14px,2.4vw,36px); align-items:center; }
+.nav-links a {
+  color:var(--tinta-s); font-family:var(--sans); font-size:10.5px;
+  letter-spacing:.18em; text-transform:uppercase; transition:color .35s;
+  position:relative;
+}
+.nav-links a::after {
+  content:""; position:absolute; left:0; bottom:-5px;
+  width:0; height:1px; background:currentColor; transition:width .4s;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width:100%; }
+.lang { border:1px solid var(--linea); border-radius:999px; display:flex; overflow:hidden; }
+.lang button {
+  background:none; border:none; cursor:pointer;
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.12em;
+  padding:6px 11px; color:var(--tinta-s); transition:.3s;
+}
+.lang button.on { background:var(--indigo); color:var(--blanco); }
+.nav-toggle { display:none; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position:relative; height:100svh; min-height:600px;
+  overflow:hidden; background:var(--indigo);
+  display:flex; align-items:flex-end;
+}
+.hero-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; opacity:0; transition:opacity 2s ease;
+}
+.hero-video.ready { opacity:1; }
+.hero-poster {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+}
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(7,46,82,.94) 0%,
+    rgba(7,46,82,.58) 38%,
+    rgba(7,46,82,.22) 68%,
+    rgba(7,46,82,.06) 100%
+  );
+}
+.hero-inner {
+  position:relative; z-index:2; width:100%;
+  max-width:1300px; margin:0 auto;
+  padding:0 clamp(24px,6vw,80px) clamp(56px,8vh,96px);
+}
+.hero-eyebrow {
+  display:flex; align-items:center; gap:14px;
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.44em;
+  text-transform:uppercase; color:var(--cielo);
+  margin-bottom:18px;
+  opacity:0; animation:fadeup .9s var(--ease-out) .2s forwards;
+}
+.hero-eyebrow::before { content:""; width:38px; height:1px; background:var(--cielo); opacity:.65; flex-shrink:0; }
+.hero-year {
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(96px,18vw,220px);
+  color:var(--blanco); letter-spacing:.02em; line-height:.85;
+  opacity:0; animation:fadeup 1.1s var(--ease-out) .38s forwards;
+}
+.hero-lockup-row {
+  display:flex; align-items:center; gap:16px; margin-top:8px;
+  opacity:0; animation:fadeup 1s var(--ease-out) .56s forwards;
+}
+.hero-rule { height:1px; width:clamp(28px,4vw,54px); background:var(--cielo); opacity:.5; }
+.hero-casa { font-family:var(--display); font-weight:500; letter-spacing:.46em; font-size:clamp(13px,1.5vw,17px); color:var(--cielo-2); }
+.hero-tag {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(17px,1.9vw,23px); color:rgba(215,235,248,.82);
+  margin-top:22px; line-height:1.55; max-width:42ch;
+  opacity:0; animation:fadeup 1s var(--ease-out) .76s forwards;
+}
+.hero-cta {
+  margin-top:30px;
+  opacity:0; animation:fadeup 1s var(--ease-out) .96s forwards;
+}
+.btn-hero {
+  display:inline-flex; align-items:center; gap:12px;
+  border:1px solid rgba(255,255,255,.44); color:var(--blanco);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.3em; text-transform:uppercase;
+  padding:13px 26px; border-radius:1px;
+  transition:background .4s, border-color .4s;
+}
+.btn-hero:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.75); }
+.btn-hero svg { transition:transform .4s; }
+.btn-hero:hover svg { transform:translateX(4px); }
+.scroll-track {
+  position:absolute; right:clamp(20px,4vw,56px); bottom:34px; z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  opacity:0; animation:fadein 1.4s ease 1.3s forwards;
+}
+.scroll-track span {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.3em;
+  text-transform:uppercase; color:rgba(255,255,255,.42);
+  writing-mode:vertical-rl;
+}
+.scroll-line {
+  width:1px; height:58px;
+  background:linear-gradient(to bottom, rgba(255,255,255,.45), transparent);
+  animation:scrollpulse 2.2s ease-in-out 1.6s infinite;
+}
+@keyframes scrollpulse {
+  0%   { transform:scaleY(0); transform-origin:top; }
+  48%  { transform:scaleY(1); transform-origin:top; }
+  52%  { transform:scaleY(1); transform-origin:bottom; }
+  100% { transform:scaleY(0); transform-origin:bottom; }
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee-strip {
+  background:var(--indigo); padding:13px 0; overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.marquee-inner { display:flex; width:max-content; animation:marquee 30s linear infinite; }
+.marquee-item {
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.34em;
+  text-transform:uppercase; color:rgba(255,255,255,.38);
+  padding:0 28px; white-space:nowrap;
+}
+.marquee-sep { color:var(--cielo); opacity:.55; margin:0 4px; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ============================================================
+   SHARED UTILITIES
+   ============================================================ */
+.wrap { max-width:1300px; margin:0 auto; padding:0 clamp(24px,6vw,80px); }
+.kicker {
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.44em;
+  text-transform:uppercase; color:var(--acero); margin-bottom:18px;
+  display:flex; align-items:center; gap:12px;
+}
+.kicker::before { content:""; width:30px; height:1px; background:var(--acero); opacity:.55; flex-shrink:0; }
+.kicker.light { color:rgba(255,255,255,.55); }
+.kicker.light::before { background:rgba(255,255,255,.4); }
+.kicker.center { justify-content:center; }
+
+/* scroll reveal */
+.reveal {
+  opacity:0; transform:translateY(28px);
+  transition:opacity .95s var(--ease-out), transform .95s var(--ease-out);
+}
+.reveal.in { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:.14s; }
+.d2 { transition-delay:.28s; }
+.d3 { transition-delay:.42s; }
+.d4 { transition-delay:.56s; }
+.reveal-img {
+  clip-path:inset(100% 0 0 0);
+  transition:clip-path 1.15s var(--ease-out);
+}
+.reveal-img.in { clip-path:inset(0% 0 0 0); }
+
+/* ============================================================
+   EL LEGADO
+   ============================================================ */
+.legado { padding:clamp(80px,10vh,124px) 0; background:var(--blanco); }
+.legado-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,100px); align-items:center;
+}
+.legado-img-wrap {
+  overflow:hidden; border-radius:2px;
+  box-shadow:0 32px 88px -24px rgba(7,46,82,.38),
+             inset 0 0 0 1px rgba(183,213,232,.28);
+  max-width:320px; margin:0 auto;
+  transition:box-shadow .6s ease;
+}
+.legado-img-wrap:hover {
+  box-shadow:0 40px 100px -20px rgba(7,46,82,.48),
+             inset 0 0 0 1px rgba(183,213,232,.65);
+}
+.legado-img-wrap img {
+  width:100%; height:auto;
+  display:block;
+  transition:transform 1.4s cubic-bezier(.16,1,.3,1);
+}
+.legado-img-wrap:hover img { transform:scale(1.07); }
+.legado-badge {
+  position:absolute; bottom:20px; left:20px;
+  background:rgba(7,46,82,.78); backdrop-filter:blur(10px);
+  color:rgba(255,255,255,.82); font-family:var(--sans);
+  font-size:8.5px; letter-spacing:.32em; text-transform:uppercase;
+  padding:8px 14px; border-radius:1px;
+}
+
+.legado-text h2 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(30px,3.8vw,54px); letter-spacing:.12em;
+  color:var(--tinta); line-height:1.08; margin-bottom:24px;
+}
+.legado-pull {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(19px,2.1vw,25px); color:var(--tinta-s);
+  line-height:1.6; padding-left:20px;
+  border-left:2px solid var(--cielo); margin-bottom:26px;
+}
+.legado-body {
+  font-family:var(--serif); font-size:clamp(15px,1.45vw,17.5px);
+  color:var(--tinta-s); line-height:1.9; margin-bottom:38px;
+}
+.gen-row { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px; }
+.gen-card { border-top:1px solid var(--linea); padding-top:18px; }
+.gen-num {
+  font-family:var(--display); font-size:10px; letter-spacing:.38em;
+  color:var(--acero); margin-bottom:7px; text-transform:uppercase;
+}
+.gen-label {
+  font-family:var(--display); font-size:clamp(12px,1.2vw,14px);
+  letter-spacing:.2em; color:var(--tinta); margin-bottom:7px;
+}
+.gen-sub {
+  font-family:var(--serif); font-style:italic;
+  font-size:13px; color:var(--tinta-s); line-height:1.5;
+}
+
+/* ============================================================
+   STATS BAND
+   ============================================================ */
+.stats-band {
+  background:var(--tinta); position:relative; overflow:hidden;
+  padding:clamp(56px,8vh,88px) 0;
+}
+.stats-band::before {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(7,46,82,.0) 0%, rgba(32,58,84,.6) 100%);
+}
+.stats-band-bg {
+  position:absolute; inset:0;
+  background-image:url("assets/agave-campo.webp");
+  background-size:cover; background-position:center 60%;
+  opacity:.1;
+}
+.stats-grid {
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.stat-item {
+  padding:clamp(20px,4vw,44px) clamp(16px,3vw,36px);
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.1);
+  opacity:0; transform:translateY(20px);
+  transition:opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+.stat-item.in { opacity:1; transform:translateY(0); }
+.stat-item:nth-child(2) { transition-delay:.12s; }
+.stat-item:nth-child(3) { transition-delay:.24s; }
+.stat-item:nth-child(4) { transition-delay:.36s; border-right:none; }
+.stat-num {
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(36px,5.5vw,72px); letter-spacing:.06em;
+  color:var(--cielo); line-height:1; margin-bottom:12px;
+  display:block;
+}
+.stat-label {
+  font-family:var(--sans); font-size:clamp(8px,1vw,10px); letter-spacing:.38em;
+  text-transform:uppercase; color:rgba(255,255,255,.45);
+  line-height:1.6;
+}
+.stat-sub {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(12px,1.3vw,14.5px); color:rgba(215,235,248,.55);
+  margin-top:6px;
+}
+
+/* ============================================================
+   FULL-BLEED BREAK
+   ============================================================ */
+.bleed-break {
+  position:relative; height:clamp(360px,54vh,600px);
+  overflow:hidden;
+}
+.bleed-img {
+  width:100%; height:120%; object-fit:cover;
+  will-change:transform; margin-top:-10%;
+}
+.bleed-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(
+    105deg,
+    rgba(7,46,82,.82) 0%,
+    rgba(7,46,82,.5) 42%,
+    rgba(7,46,82,.08) 100%
+  );
+  display:flex; align-items:center;
+}
+.bleed-text { padding:0 clamp(24px,6vw,80px); max-width:580px; }
+.bleed-text blockquote {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(21px,2.9vw,38px); color:var(--blanco); line-height:1.42;
+  margin-bottom:16px;
+}
+.bleed-text cite {
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.34em;
+  text-transform:uppercase; color:var(--cielo); opacity:.75;
+}
+
+/* ============================================================
+   EL OFICIO — STICKY SCROLL
+   ============================================================ */
+.oficio-section {}
+.oficio-intro {
+  background:var(--bruma); padding:clamp(60px,8vh,96px) 0 clamp(40px,5vh,64px);
+  text-align:center;
+}
+.oficio-intro h2 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(26px,3.4vw,46px); letter-spacing:.15em;
+  color:var(--tinta); margin-bottom:14px;
+}
+.oficio-intro p {
+  font-family:var(--serif); font-style:italic;
+  font-size:clamp(17px,1.75vw,21px); color:var(--tinta-s);
+  max-width:50ch; margin:0 auto; line-height:1.7;
+}
+
+.oficio-scroll { position:relative; height:600vh; }
+.oficio-sticky {
+  position:sticky; top:0; height:100svh;
+  overflow:hidden; background:var(--indigo);
+}
+
+.oficio-bg {
+  position:absolute; inset:0;
+  opacity:0; transition:opacity 1s ease;
+}
+.oficio-bg.on { opacity:1; }
+.oficio-bg img,
+.oficio-bg video { width:100%; height:100%; object-fit:cover; }
+#obg5 img { object-position: center 65%; }
+.oficio-bg::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(
+    100deg,
+    rgba(7,46,82,.9) 0%,
+    rgba(7,46,82,.7) 42%,
+    rgba(7,46,82,.28) 100%
+  );
+}
+
+.oficio-ui {
+  position:absolute; inset:0; display:flex; align-items:center;
+  padding:0 clamp(24px,6vw,80px);
+}
+.oficio-cols {
+  width:100%; max-width:1300px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto;
+  gap:60px; align-items:center;
+}
+
+.oficio-steps { display:grid; grid-template-areas:"stack"; }
+.oficio-step {
+  grid-area:stack; position:relative;
+  opacity:0; transform:translateY(22px);
+  transition:opacity .75s var(--ease-out), transform .75s var(--ease-out);
+  pointer-events:none;
+}
+.oficio-step.on { opacity:1; transform:translateY(0); pointer-events:auto; }
+.oficio-step-n {
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(90px,13vw,160px); color:rgba(255,255,255,.06);
+  line-height:1; position:absolute; top:-14px; left:-12px;
+  pointer-events:none; user-select:none;
+}
+.oficio-eyebrow {
+  font-family:var(--sans); font-size:9px; letter-spacing:.44em;
+  text-transform:uppercase; color:var(--cielo); margin-bottom:14px;
+  position:relative;
+}
+.oficio-step h3 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(26px,3.6vw,46px); letter-spacing:.11em;
+  color:var(--blanco); line-height:1.08; margin-bottom:18px;
+  position:relative;
+}
+.oficio-step p {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(16px,1.7vw,20px); color:rgba(215,235,248,.78);
+  line-height:1.78; max-width:40ch; position:relative;
+}
+
+.oficio-dots { display:flex; flex-direction:column; gap:20px; align-items:flex-end; }
+.oficio-dot {
+  display:flex; align-items:center; gap:12px;
+  cursor:pointer; opacity:.3; transition:opacity .4s;
+  background:none; border:none;
+}
+.oficio-dot.on { opacity:1; }
+.oficio-dot span {
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--cielo-2); text-align:right;
+}
+.dot-dash {
+  width:22px; height:1px; background:var(--cielo); flex-shrink:0;
+  transition:width .4s;
+}
+.oficio-dot.on .dot-dash { width:44px; }
+
+.oficio-bar {
+  position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:rgba(255,255,255,.1); z-index:10;
+}
+.oficio-bar-fill {
+  height:100%; background:var(--cielo);
+  width:16.67%; transition:width .5s var(--ease-out);
+}
+
+/* ============================================================
+   EL TERRITORIO
+   ============================================================ */
+.territorio { padding:clamp(80px,10vh,124px) 0; background:var(--bruma); }
+.territorio-header {
+  text-align:center; max-width:640px; margin:0 auto clamp(48px,6vh,72px);
+}
+.territorio-header h2 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(26px,3.4vw,48px); letter-spacing:.12em;
+  color:var(--tinta); line-height:1.08; margin-bottom:14px;
+}
+.territorio-header p {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(16px,1.6vw,20px); color:var(--tinta-s); line-height:1.65;
+}
+.territorio-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(16px,2.5vw,32px); margin-bottom:clamp(40px,5vh,60px);
+}
+.terr-card {
+  background:var(--blanco); border-radius:2px;
+  padding:clamp(28px,3.5vw,44px) clamp(22px,2.5vw,34px);
+  box-shadow:0 8px 32px -8px rgba(7,46,82,.1);
+  border-top:2px solid var(--cielo);
+}
+.terr-num {
+  font-family:var(--display); font-size:10px; letter-spacing:.38em;
+  color:var(--acero); margin-bottom:14px; text-transform:uppercase;
+}
+.terr-title {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(13px,1.2vw,16px); letter-spacing:.18em;
+  color:var(--tinta); margin-bottom:14px; line-height:1.3;
+}
+.terr-text {
+  font-family:var(--serif); font-size:clamp(14px,1.2vw,16px);
+  color:var(--tinta-s); line-height:1.85;
+}
+.bat-callout {
+  display:flex; align-items:flex-start; gap:22px;
+  background:var(--blanco); border-radius:2px;
+  padding:clamp(20px,2.5vw,32px) clamp(24px,3vw,44px);
+  box-shadow:0 4px 20px -4px rgba(7,46,82,.08);
+  border-left:2px solid var(--cielo);
+  max-width:820px; margin:0 auto;
+}
+.bat-icon { flex-shrink:0; color:var(--acero); opacity:.7; margin-top:2px; }
+.bat-label {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.34em;
+  text-transform:uppercase; color:var(--acero); margin-bottom:8px;
+}
+.bat-text {
+  font-family:var(--serif); font-size:clamp(14px,1.15vw,15.5px);
+  color:var(--tinta-s); line-height:1.82;
+}
+
+/* ============================================================
+   EL BLANCO — PRODUCTO
+   ============================================================ */
+.producto {
+  padding:clamp(80px,10vh,128px) 0;
+  background:var(--blanco); overflow:hidden;
+}
+.producto-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,96px); align-items:start;
+}
+
+.bottle-col { position:relative; }
+.bottle-aura {
+  position:absolute; inset:-8%; border-radius:50%;
+  background:radial-gradient(circle, var(--cielo-2) 0%, transparent 68%);
+  opacity:.38;
+}
+.bottle-img-wrap { position:relative; z-index:2; max-width:340px; margin:0 auto; }
+.bottle-img-wrap img {
+  width:100%;
+  filter:drop-shadow(0 36px 80px rgba(7,46,82,.28));
+  transition:transform .7s var(--ease-out), filter .7s ease;
+}
+.bottle-img-wrap img:hover {
+  transform:translateY(-10px) scale(1.015);
+  filter:drop-shadow(0 56px 100px rgba(7,46,82,.36));
+}
+.bottle-tag {
+  position:absolute; z-index:3;
+  background:rgba(251,253,254,.96); backdrop-filter:blur(10px);
+  border:1px solid var(--linea); border-radius:2px;
+  padding:11px 15px;
+}
+.bt-val { font-family:var(--display); font-weight:500; font-size:18px; letter-spacing:.12em; color:var(--indigo); }
+.bt-key { font-family:var(--sans); font-size:7.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--tinta-s); margin-top:2px; }
+.bt-1 { top:12%; right:-8%; }
+.bt-2 { bottom:22%; right:-6%; }
+
+.producto-text h2 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(27px,3.4vw,46px); letter-spacing:.13em;
+  color:var(--tinta); margin-bottom:14px;
+}
+.producto-desc {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(17px,1.8vw,22px); color:var(--tinta-s);
+  line-height:1.65; margin-bottom:32px; padding-bottom:28px;
+  border-bottom:1px solid var(--linea);
+}
+.specs { display:grid; grid-template-columns:1fr 1fr; }
+.spec {
+  padding:18px 0; border-bottom:1px solid var(--linea);
+}
+.spec:nth-child(odd)  { padding-right:20px; border-right:1px solid var(--linea); }
+.spec:nth-child(even) { padding-left:20px; }
+.spec.full { grid-column:1/-1; border-right:none !important; padding-right:0 !important; }
+.spec-k {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.34em;
+  text-transform:uppercase; color:var(--acero); margin-bottom:5px;
+}
+.spec-v {
+  font-family:var(--serif); font-size:clamp(14px,1.4vw,16.5px);
+  color:var(--tinta); line-height:1.4;
+}
+.cert-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:26px; }
+.cert-chip {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--acero);
+  border:1px solid var(--linea); padding:5px 12px; border-radius:999px;
+}
+
+/* ============================================================
+   BOTTLE GALLERY
+   ============================================================ */
+.bottle-gallery {
+  margin-top:clamp(56px,8vh,88px);
+  position:relative;
+}
+.gallery-header {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:24px;
+}
+.gallery-hint {
+  font-family:var(--sans); font-size:9px; letter-spacing:.28em;
+  text-transform:uppercase; color:var(--acero); opacity:.65;
+  display:flex; align-items:center; gap:8px;
+}
+.gallery-hint svg { opacity:.7; }
+.gallery-track {
+  display:flex; gap:18px;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  scrollbar-width:none; -ms-overflow-style:none;
+  padding-bottom:4px;
+  cursor:grab;
+}
+.gallery-track::-webkit-scrollbar { display:none; }
+.gallery-track:active { cursor:grabbing; }
+.gallery-card {
+  flex:0 0 clamp(220px,calc(25% - 14px),320px);
+  scroll-snap-align:start;
+  position:relative; overflow:hidden; border-radius:2px;
+  background:var(--bruma);
+}
+.gallery-card-img {
+  width:100%; aspect-ratio:3/4;
+  object-fit:cover; object-position:center;
+  transition:transform 8s ease;
+  display:block;
+}
+.gallery-card:hover .gallery-card-img { transform:scale(1.06); }
+.gallery-card-label {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:40px 16px 16px;
+  background:linear-gradient(to top, rgba(7,46,82,.78) 0%, transparent 100%);
+}
+.gallery-card-label span {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.32em;
+  text-transform:uppercase; color:rgba(255,255,255,.78);
+}
+.gallery-progress {
+  display:flex; gap:8px; margin-top:18px; justify-content:center;
+}
+.gallery-pip {
+  width:24px; height:1.5px; background:var(--linea);
+  border-radius:999px; transition:background .3s, width .3s;
+  cursor:pointer;
+}
+.gallery-pip.on { background:var(--indigo); width:40px; }
+
+/* editorial image band */
+.editorial {
+  margin-top:clamp(60px,8vh,96px);
+  display:grid; grid-template-columns:3fr 2fr;
+  height:clamp(340px,48vh,520px); overflow:hidden; border-radius:2px;
+  box-shadow:0 40px 100px -30px rgba(7,46,82,.25);
+}
+.editorial-img { overflow:hidden; }
+.editorial-img img { width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 9s ease; }
+.editorial-img:hover img { transform:scale(1.06); }
+.editorial-text {
+  background:var(--indigo);
+  display:flex; align-items:center;
+  padding:clamp(30px,4vw,56px);
+}
+.editorial-text blockquote {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(18px,2.3vw,28px); color:var(--blanco);
+  line-height:1.52; margin-bottom:18px;
+}
+.editorial-text cite {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.36em;
+  text-transform:uppercase; color:var(--cielo); opacity:.7;
+}
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.contacto {
+  background:var(--indigo); position:relative; overflow:hidden;
+  padding:clamp(80px,10vh,120px) 0 0;
+}
+.contacto-bg {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  opacity:.1;
+  background-image:url("assets/campo-agave.jpg");
+}
+.contacto-inner { position:relative; z-index:1; }
+.contacto h2 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(26px,3.4vw,48px); letter-spacing:.13em;
+  color:var(--blanco); line-height:1.1; margin-bottom:14px;
+}
+.contacto .lead {
+  font-family:var(--serif); font-style:italic; font-weight:300;
+  font-size:clamp(17px,1.75vw,21px); color:rgba(215,235,248,.72);
+  max-width:46ch; line-height:1.7; margin-bottom:36px;
+}
+.cta-row { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:60px; }
+.btn-fill {
+  display:inline-block; background:var(--blanco); color:var(--indigo);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.28em;
+  text-transform:uppercase; padding:15px 30px; border-radius:1px;
+  transition:background .35s;
+}
+.btn-fill:hover { background:var(--cielo-2); }
+.btn-ghost {
+  display:inline-block; border:1px solid rgba(255,255,255,.38); color:var(--blanco);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.28em;
+  text-transform:uppercase; padding:15px 30px; border-radius:1px;
+  transition:border-color .35s, background .35s;
+}
+.btn-ghost:hover { border-color:rgba(255,255,255,.75); background:rgba(255,255,255,.07); }
+.meta-row {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.meta-cell {
+  padding:28px 0; border-right:1px solid rgba(255,255,255,.08);
+}
+.meta-cell:last-child { border-right:none; }
+.meta-cell:not(:first-child) { padding-left:28px; }
+.meta-cell h4 {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.36em;
+  text-transform:uppercase; color:var(--cielo); margin-bottom:7px;
+}
+.meta-cell p {
+  font-family:var(--serif); font-size:clamp(14px,1.4vw,16px);
+  color:rgba(255,255,255,.72); line-height:1.5;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background:#03162a;
+  padding:clamp(32px,5vh,52px) clamp(24px,6vw,80px) 28px;
+  position:relative; z-index:1;
+  margin-top:60px;
+}
+.foot-top {
+  display:grid; grid-template-columns:1fr 1fr 1fr;
+  gap:32px; align-items:start;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  margin-bottom:22px;
+}
+.foot-brand { display:flex; align-items:center; gap:9px; color:rgba(255,255,255,.45); }
+.foot-brand .agave { font-size:20px; }
+.foot-brand b { font-family:var(--display); font-size:13px; letter-spacing:.28em; }
+.foot-brand small {
+  display:block; font-family:var(--sans); font-size:7px;
+  letter-spacing:.36em; text-transform:uppercase;
+  color:rgba(255,255,255,.28); margin-top:4px;
+}
+.foot-producer {
+  font-family:var(--sans); font-size:9px; letter-spacing:.12em;
+  color:rgba(255,255,255,.35); line-height:1.9;
+}
+.foot-producer strong {
+  display:block; font-weight:500; color:rgba(255,255,255,.48);
+  letter-spacing:.18em; margin-bottom:4px;
+}
+.foot-links {
+  display:flex; flex-direction:column; gap:8px; align-items:flex-end;
+}
+.foot-links a {
+  font-family:var(--sans); font-size:9px; letter-spacing:.2em;
+  text-transform:uppercase; color:rgba(255,255,255,.3);
+  transition:color .3s;
+}
+.foot-links a:hover { color:var(--cielo); }
+.foot-warning {
+  font-family:var(--sans); font-size:8.5px; letter-spacing:.11em;
+  color:rgba(255,255,255,.22); text-align:center; line-height:1.8;
+  padding:0 0 16px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:16px;
+}
+.foot-bottom {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px;
+}
+.foot-copyright {
+  font-family:var(--sans); font-size:8px; letter-spacing:.14em;
+  color:rgba(255,255,255,.18); line-height:1.7;
+}
+.foot-nom {
+  font-family:var(--sans); font-size:8px; letter-spacing:.22em;
+  text-transform:uppercase; color:rgba(255,255,255,.18);
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes fadeup  { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadein  { from{opacity:0} to{opacity:1} }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:960px) {
+  .legado-grid       { grid-template-columns:1fr; }
+  .legado-img-wrap   { max-width:100%; }
+  .territorio-cards  { grid-template-columns:1fr; }
+  .bat-callout       { flex-direction:column; gap:14px; }
+  .producto-grid   { grid-template-columns:1fr; }
+  .bottle-col      { max-width:320px; margin:0 auto 40px; }
+  .bt-1, .bt-2     { display:none; }
+  .oficio-cols     { grid-template-columns:1fr; }
+  .oficio-dots     { display:none; }
+  .gen-row         { grid-template-columns:1fr 1fr; }
+  .meta-row        { grid-template-columns:1fr; }
+  .meta-cell       { border-right:none; border-bottom:1px solid rgba(255,255,255,.08); }
+  .meta-cell:not(:first-child) { padding-left:0; }
+  .editorial       { grid-template-columns:1fr; height:auto; }
+  .editorial-img   { height:300px; }
+  .stats-grid      { grid-template-columns:repeat(2,1fr); }
+  .stat-item:nth-child(2) { border-right:none; }
+  .stat-item:nth-child(3) { border-top:1px solid rgba(255,255,255,.1); }
+  .stat-item:nth-child(4) { border-top:1px solid rgba(255,255,255,.1); }
+  .gallery-card    { flex:0 0 72vw; }
+  .foot-top        { grid-template-columns:1fr; }
+  .foot-links      { align-items:flex-start; }
+  .foot-bottom     { flex-direction:column; text-align:center; }
+}
+
+@media (max-width:640px) {
+  .nav-links { display:none; }
+  .nav-toggle {
+    display:flex; flex-direction:column; gap:5px;
+    background:none; border:none; cursor:pointer; padding:8px;
+  }
+  .nav-toggle span {
+    display:block; width:22px; height:1.5px; background:var(--tinta);
+    transition:transform .35s var(--ease-out), opacity .3s;
+    transform-origin:center;
+  }
+  nav.light .nav-toggle span { background:var(--blanco); }
+  .nav-toggle.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+  .nav-toggle.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+  .nav-links.open {
+    display:flex; flex-direction:column;
+    position:fixed; inset:0;
+    background:rgba(7,46,82,.97);
+    align-items:center; justify-content:center;
+    gap:28px; z-index:999;
+  }
+  .nav-links.open a { font-size:17px; color:var(--blanco); }
+  .nav-links.open .lang { margin-top:12px; }
+  .nav-links.open .lang button { color:rgba(255,255,255,.6); }
+  .cta-row { flex-direction:column; }
+  .btn-fill, .btn-ghost { text-align:center; }
+  .gen-row { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .gallery-card { flex:0 0 82vw; }
+  .age-gate-btns { flex-direction:column; width:100%; }
+  .age-btn-yes, .age-btn-no { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     AGE GATE
+     ============================================================ -->
+<div id="ageGate" class="age-gate">
+  <div class="age-gate-bg" aria-hidden="true"></div>
+  <div class="age-gate-grain" aria-hidden="true"></div>
+  <div class="age-gate-lang">
+    <button id="ageEs" class="on" onclick="setLang('es');this.classList.add('on');document.getElementById('ageEn').classList.remove('on')">ES</button>
+    <button id="ageEn"           onclick="setLang('en');this.classList.add('on');document.getElementById('ageEs').classList.remove('on')">EN</button>
+  </div>
+  <div class="age-gate-inner">
+    <div class="age-gate-logo" id="agaveGate"></div>
+    <div class="age-gate-title">CASA 1919</div>
+    <div class="age-gate-rule">
+      <span></span>
+      <i data-es="Tequila Blanco" data-en="Tequila Blanco">Tequila Blanco</i>
+      <span></span>
+    </div>
+    <p class="age-gate-subtitle"
+      data-es="Este sitio contiene contenido sobre bebidas alcohólicas. El acceso es exclusivo para personas mayores de edad."
+      data-en="This site contains content about alcoholic beverages. Access is exclusively for adults of legal drinking age.">
+      Este sitio contiene contenido sobre bebidas alcohólicas. El acceso es exclusivo para personas mayores de edad.
+    </p>
+    <p class="age-gate-question"
+      data-es="¿Eres mayor de 18 años?"
+      data-en="Are you 18 years of age or older?">
+      ¿Eres mayor de 18 años?
+    </p>
+    <div class="age-gate-btns">
+      <button class="age-btn-yes" id="ageYes"
+        data-es="Soy mayor de edad"
+        data-en="I am of legal age">
+        Soy mayor de edad
+      </button>
+      <button class="age-btn-no" id="ageNo"
+        data-es="Soy menor de edad"
+        data-en="I am under age">
+        Soy menor de edad
+      </button>
+    </div>
+    <p class="age-gate-note"
+      data-es="Al continuar confirmas que eres mayor de edad conforme a las leyes de tu país. El consumo de bebidas alcohólicas está prohibido para menores."
+      data-en="By continuing you confirm you are of legal drinking age in your country. The consumption of alcoholic beverages by minors is prohibited.">
+      Al continuar confirmas que eres mayor de edad conforme a las leyes de tu país.<br>
+      El consumo de bebidas alcohólicas está prohibido para menores.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav id="nav" class="light">
+  <a href="#top" class="brand">
+    <span class="agave" id="agaveBrand"></span>
+    <span>
+      <b>CASA 1919</b>
+      <small data-es="Tequila Blanco" data-en="Tequila Blanco">Tequila Blanco</small>
+    </span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#legado"   data-es="El Legado"  data-en="The Legacy">El Legado</a>
+    <a href="#oficio"   data-es="El Oficio"  data-en="The Craft">El Oficio</a>
+    <a href="#producto" data-es="Tequila"     data-en="Tequila">Tequila</a>
+    <a href="#contacto" data-es="Contacto"   data-en="Contact">Contacto</a>
+    <div class="lang">
+      <button id="btnEs" class="on" onclick="setLang('es')">ES</button>
+      <button id="btnEn"           onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="top">
+  <img class="hero-poster"
+    src="assets/botella-atardecer.jpg"
+    alt="Casa 1919 — Tequila Blanco, Amatitán"
+    fetchpriority="high">
+  <video class="hero-video" autoplay muted loop playsinline
+    poster="assets/botella-atardecer.jpg">
+    <source src="../tequila%20casa%201919/media2-web.mp4" type="video/mp4">
+    <source src="../tequila%20casa%201919/media1.mp4"     type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow" data-es="Barranca de Amatitán · Jalisco · México" data-en="Barranca de Amatitán · Jalisco · Mexico">
+      Barranca de Amatitán · Jalisco · México
+    </p>
+    <div class="hero-year">1919</div>
+    <div class="hero-lockup-row">
+      <span class="hero-rule"></span>
+      <span class="hero-casa">CASA</span>
+      <span class="hero-rule"></span>
+    </div>
+    <p class="hero-tag"
+      data-es="Hay sabores que solo el tiempo puede dar. Desde 1919, ese es el único aditivo que usamos."
+      data-en="Some flavors only time can give. Since 1919, it's the only additive we've ever used.">
+      Hay sabores que solo el tiempo puede dar. Desde 1919, ese es el único aditivo que usamos.
+    </p>
+    <div class="hero-cta">
+      <a href="#legado" class="btn-hero" data-es="Descubrir" data-en="Discover">
+        Descubrir
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-track" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</header>
+
+<!-- ============================================================
+     MARQUEE
+     ============================================================ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner" id="marqueeInner"></div>
+</div>
+
+<!-- ============================================================
+     EL LEGADO
+     ============================================================ -->
+<section class="legado" id="legado">
+  <div class="wrap">
+    <div class="legado-grid">
+
+      <div class="legado-img-wrap reveal">
+        <img
+          src="assets/botella-atardecer.jpg"
+          alt="Casa 1919 Tequila Blanco — campo de agaves al atardecer, Amatitán"
+          loading="eager" fetchpriority="high"
+          width="647" height="1280">
+      </div>
+
+      <div class="legado-text">
+        <div class="kicker reveal"     data-es="El Legado"       data-en="The Legacy">El Legado</div>
+        <h2 class="reveal d1">
+          <span data-es="Tres generaciones." data-en="Three generations.">Tres generaciones.</span><br>
+          <span data-es="Un solo método."    data-en="One single method.">Un solo método.</span>
+        </h2>
+        <p class="legado-pull reveal d2"
+          data-es="1919 no es una fecha en el calendario. Es la promesa que una familia lleva más de un siglo cumpliendo — con el mismo silencio, el mismo fuego lento, <b>la misma forma de trabajar</b>."
+          data-en="1919 is not a date on the calendar. It's the promise a family has kept for over a century — with the same silence, the same slow fire, <b>the same way of working</b>.">
+          1919 no es una fecha en el calendario. Es la promesa que una familia lleva más de un siglo cumpliendo — con el mismo silencio, el mismo fuego lento, <b>la misma forma de trabajar</b>.
+        </p>
+        <p class="legado-body reveal d2"
+          data-es="No heredamos un apellido en la etiqueta. Heredamos algo más difícil de falsificar: la paciencia de esperar siete años por cada agave, el silencio de los hornos lentos, y la convicción de que el sabor honesto no se logra — se espera. Tres generaciones después, no hemos cambiado nada. Eso no es nostalgia. Es orgullo."
+          data-en="We didn't inherit a name for the label. We inherited something harder to fake: the patience to wait seven years for each agave, the silence of slow ovens, and the conviction that honest flavor isn't achieved — it's awaited. Three generations later, we haven't changed a thing. That isn't nostalgia. That's pride.">
+          No heredamos un apellido en la etiqueta. Heredamos algo más difícil de falsificar: la paciencia de esperar siete años por cada agave, el silencio de los hornos lentos, y la convicción de que el sabor honesto no se logra — se espera. Tres generaciones después, no hemos cambiado nada. Eso no es nostalgia. Es orgullo.
+        </p>
+        <div class="gen-row">
+          <div class="gen-card reveal d2">
+            <div class="gen-num">I</div>
+            <div class="gen-label" data-es="La Raíz"  data-en="The Root">La Raíz</div>
+            <div class="gen-sub"   data-es="Quien dijo: así se hace"   data-en="Who said: this is how it's done">Quien dijo: así se hace</div>
+          </div>
+          <div class="gen-card reveal d3">
+            <div class="gen-num">II</div>
+            <div class="gen-label" data-es="El Oficio" data-en="The Craft">El Oficio</div>
+            <div class="gen-sub"   data-es="Quienes dijeron: así se mantiene"   data-en="Who said: this is how it's kept">Quienes dijeron: así se mantiene</div>
+          </div>
+          <div class="gen-card reveal d4">
+            <div class="gen-num">III</div>
+            <div class="gen-label" data-es="Hoy"       data-en="Today">Hoy</div>
+            <div class="gen-sub"   data-es="Quienes dicen: así se lleva al mundo" data-en="Who say: this is how it reaches the world">Quienes dicen: así se lleva al mundo</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAND
+     ============================================================ -->
+<section class="stats-band" id="statsBand">
+  <div class="stats-band-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item" data-target="7">
+        <span class="stat-num" id="stat0">0</span>
+        <span class="stat-label" data-es="Años de madurez" data-en="Years of maturity">Años de madurez</span>
+        <p class="stat-sub" data-es="Seleccionados uno por uno" data-en="Chosen one by one">Seleccionados uno por uno</p>
+      </div>
+      <div class="stat-item" data-target="3">
+        <span class="stat-num" id="stat1">0</span>
+        <span class="stat-label" data-es="Generaciones de familia" data-en="Family generations">Generaciones de familia</span>
+        <p class="stat-sub" data-es="Un solo método, tres voces" data-en="One method, three voices">Un solo método, tres voces</p>
+      </div>
+      <div class="stat-item" data-target="6">
+        <span class="stat-num" id="stat2">0</span>
+        <span class="stat-label" data-es="Etapas artesanales" data-en="Artisanal stages">Etapas artesanales</span>
+        <p class="stat-sub" data-es="Del campo al alambique" data-en="From field to still">Del campo al alambique</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" id="stat3">1</span>
+        <span class="stat-label" data-es="Solo el corazón permanece" data-en="Only the heart remains">Solo el corazón permanece</span>
+        <p class="stat-sub" data-es="Doble destilación en cobre" data-en="Double distillation in copper">Doble destilación en cobre</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FULL-BLEED BREAK — HORNOS
+     ============================================================ -->
+<div class="bleed-break" id="bleedBreak">
+  <img class="bleed-img"
+    src="assets/hornos-closeup.jpg"
+    alt="Piñas de agave en hornos de mampostería — cocción lenta, Amatitán"
+    loading="lazy">
+  <div class="bleed-overlay">
+    <div class="bleed-text">
+      <blockquote class="reveal"
+        data-es="«Lo que no se puede apresurar, no se puede falsificar.»"
+        data-en="«What cannot be rushed cannot be faked.»">
+        «Lo que no se puede apresurar, no se puede falsificar.»
+      </blockquote>
+      <cite class="reveal d1"
+        data-es="— Casa 1919, desde 1919"
+        data-en="— Casa 1919, since 1919">— Casa 1919, desde 1919</cite>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EL OFICIO — STICKY SCROLL
+     ============================================================ -->
+<section class="oficio-section" id="oficio">
+
+  <div class="oficio-intro">
+    <div class="wrap">
+      <div class="kicker center reveal"
+        data-es="El Oficio" data-en="The Craft">El Oficio</div>
+      <h2 class="reveal d1"
+        data-es="Escrito en tiempo, no en papeles."
+        data-en="Written in time, not on paper.">
+        Escrito en tiempo, no en papeles.
+      </h2>
+      <p class="reveal d2"
+        data-es="Seis decisiones que toman más tiempo del necesario. Esa es exactamente la idea."
+        data-en="Six decisions that take longer than they need to. That's exactly the point.">
+        Seis decisiones que toman más tiempo del necesario. Esa es exactamente la idea.
+      </p>
+    </div>
+  </div>
+
+  <div class="oficio-scroll" id="oficioScroll">
+    <div class="oficio-sticky" id="oficioSticky">
+
+      <div class="oficio-bg on" id="obg0">
+        <img src="assets/agave-campo.webp" alt="" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="oficio-bg" id="obg1">
+        <img src="assets/hornos-agave.jpg" alt="" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="oficio-bg" id="obg2">
+        <video autoplay muted loop playsinline
+          poster="assets/tahona-nueva.jpg"
+          aria-hidden="true">
+          <source src="assets/tahona-loop.mp4" type="video/mp4">
+          <img src="assets/tahona-nueva.jpg" alt="" aria-hidden="true">
+        </video>
+      </div>
+      <div class="oficio-bg" id="obg3">
+        <img src="assets/tanques.webp" alt="" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="oficio-bg" id="obg4">
+        <img src="assets/manantial.png" alt="" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="oficio-bg" id="obg5">
+        <img src="assets/alambique-cobre.jpg" alt="" loading="lazy" aria-hidden="true">
+      </div>
+
+      <div class="oficio-ui">
+        <div class="oficio-cols">
+
+          <div class="oficio-steps" id="oficioSteps">
+
+            <div class="oficio-step on" data-idx="0">
+              <div class="oficio-step-n">01</div>
+              <div class="oficio-eyebrow" data-es="Materia prima" data-en="Raw material">Materia prima</div>
+              <h3 data-es="Agaves de<br>madurez extrema" data-en="Extreme-maturity<br>agaves">Agaves de<br>madurez extrema</h3>
+              <p data-es="Siete años de sol, lluvia y silencio en cada piña. No los contamos en el calendario — los sentimos con las manos."
+                 data-en="Seven years of sun, rain and silence in every piña. We don't count them on a calendar — we feel them with our hands.">
+                Siete años de sol, lluvia y silencio en cada piña. No los contamos en el calendario — los sentimos con las manos.
+              </p>
+            </div>
+
+            <div class="oficio-step" data-idx="1">
+              <div class="oficio-step-n">02</div>
+              <div class="oficio-eyebrow" data-es="Cocción" data-en="Cooking">Cocción</div>
+              <h3 data-es="Hornos de<br>mampostería" data-en="Masonry<br>ovens">Hornos de<br>mampostería</h3>
+              <p data-es="El fuego lento convierte la fibra en dulzura, el almidón en alma. No hay atajos — solo tiempo y calor honesto."
+                 data-en="Slow fire turns fiber into sweetness, starch into soul. No shortcuts — only time and honest heat.">
+                El fuego lento convierte la fibra en dulzura, el almidón en alma. No hay atajos — solo tiempo y calor honesto.
+              </p>
+            </div>
+
+            <div class="oficio-step" data-idx="2">
+              <div class="oficio-step-n">03</div>
+              <div class="oficio-eyebrow" data-es="Extracción" data-en="Extraction">Extracción</div>
+              <h3 data-es="Tahona<br>volcánica" data-en="Volcanic<br>tahona">Tahona<br>volcánica</h3>
+              <p data-es="Volcánica como la tierra que crió el agave. Gira despacio, extrae sin violencia, libera lo que la prisa nunca encontraría."
+                 data-en="Volcanic, like the land that raised the agave. It turns slowly, extracts without force, releases what haste would never find.">
+                Volcánica como la tierra que crió el agave. Gira despacio, extrae sin violencia, libera lo que la prisa nunca encontraría.
+              </p>
+            </div>
+
+            <div class="oficio-step" data-idx="3">
+              <div class="oficio-step-n">04</div>
+              <div class="oficio-eyebrow" data-es="Fermentación" data-en="Fermentation">Fermentación</div>
+              <h3 data-es="Tinas de<br>madera" data-en="Wooden<br>vats">Tinas de<br>madera</h3>
+              <p data-es="En estas tinas, el mosto dialoga con el aire de la barranca: su humedad, sus corrientes, su vida propia. Lo que sube no es aroma de fórmula — es aroma de un lugar que no puede copiarse."
+                 data-en="In these vats, the must converses with the barranca's air — its humidity, its currents, its own life. What rises is not the scent of a formula — it is the scent of a place that cannot be copied.">
+                En estas tinas, el mosto dialoga con el aire de la barranca: su humedad, sus corrientes, su vida propia. Lo que sube no es aroma de fórmula — es aroma de un lugar que no puede copiarse.
+              </p>
+            </div>
+
+            <div class="oficio-step" data-idx="4">
+              <div class="oficio-step-n">05</div>
+              <div class="oficio-eyebrow" data-es="Identidad" data-en="Identity">Identidad</div>
+              <h3 data-es="Fermentación<br>viva" data-en="Living<br>fermentation">Fermentación<br>viva</h3>
+              <p data-es="El proceso no se acelera. Se respeta. El mosto fermenta en diálogo con el entorno de la barranca — y lo que nace tiene carácter propio, identidad de origen, algo que ninguna fórmula puede replicar."
+                 data-en="The process is not rushed. It is respected. The must ferments in dialogue with the barranca's environment — and what is born has its own character, its own identity, something no formula can replicate.">
+                El proceso no se acelera. Se respeta. El mosto fermenta en diálogo con el entorno de la barranca — y lo que nace tiene carácter propio, identidad de origen, algo que ninguna fórmula puede replicar.
+              </p>
+            </div>
+
+            <div class="oficio-step" data-idx="5">
+              <div class="oficio-step-n">06</div>
+              <div class="oficio-eyebrow" data-es="Destilación" data-en="Distillation">Destilación</div>
+              <h3 data-es="Alambiques<br>de cobre" data-en="Copper<br>stills">Alambiques<br>de cobre</h3>
+              <p data-es="El cobre trabaja en silencio: neutraliza los compuestos de azufre que deja la fermentación, suaviza las aristas del destilado y reparte el calor de forma pareja. Lo que sale del alambique no es solo más limpio — es más honesto. Doble destilación: lo que no merece estar, se va. Solo queda el corazón — y el mismo criterio con que la familia lo ha reconocido por generaciones."
+                 data-en="Copper works in silence: it neutralizes the sulfur compounds left by fermentation, softens the edges of the distillate and distributes heat evenly. What leaves the still isn't just cleaner — it's more honest. Double distillation: what doesn't belong, leaves. Only the heart remains — and the same criterion with which the family has recognized it for generations.">
+                El cobre trabaja en silencio: neutraliza los compuestos de azufre que deja la fermentación, suaviza las aristas del destilado y reparte el calor de forma pareja. Lo que sale del alambique no es solo más limpio — es más honesto. Doble destilación: lo que no merece estar, se va. Solo queda el corazón — y el mismo criterio con que la familia lo ha reconocido por generaciones.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="oficio-dots" id="oficioDots">
+            <button class="oficio-dot on" data-goto="0">
+              <span data-es="Agaves"       data-en="Agaves">Agaves</span>
+              <span class="dot-dash"></span>
+            </button>
+            <button class="oficio-dot" data-goto="1">
+              <span data-es="Hornos"       data-en="Ovens">Hornos</span>
+              <span class="dot-dash"></span>
+            </button>
+            <button class="oficio-dot" data-goto="2">
+              <span data-es="Tahona"       data-en="Tahona">Tahona</span>
+              <span class="dot-dash"></span>
+            </button>
+            <button class="oficio-dot" data-goto="3">
+              <span data-es="Fermentación" data-en="Fermentation">Fermentación</span>
+              <span class="dot-dash"></span>
+            </button>
+            <button class="oficio-dot" data-goto="4">
+              <span data-es="Fermentación" data-en="Fermentation">Fermentación</span>
+              <span class="dot-dash"></span>
+            </button>
+            <button class="oficio-dot" data-goto="5">
+              <span data-es="Alambiques"   data-en="Stills">Alambiques</span>
+              <span class="dot-dash"></span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="oficio-bar">
+        <div class="oficio-bar-fill" id="oficioBarFill"></div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     EL TERRITORIO
+     ============================================================ -->
+<section class="territorio" id="territorio">
+  <div class="wrap">
+
+    <div class="territorio-header">
+      <div class="kicker center reveal"
+        data-es="El Territorio" data-en="The Territory">El Territorio</div>
+      <h2 class="reveal d1"
+        data-es="Un lugar que no se puede replicar."
+        data-en="A place that cannot be replicated.">
+        Un lugar que no se puede replicar.
+      </h2>
+      <p class="reveal d2"
+        data-es="La Barranca de Amatitán no es el escenario. Es parte del proceso."
+        data-en="The Barranca de Amatitán is not the backdrop. It is part of the process.">
+        La Barranca de Amatitán no es el escenario. Es parte del proceso.
+      </p>
+    </div>
+
+    <div class="territorio-cards">
+
+      <div class="terr-card reveal">
+        <div class="terr-num">I</div>
+        <div class="terr-title"
+          data-es="Origen con nombre propio"
+          data-en="Origin with a name of its own">Origen con nombre propio</div>
+        <p class="terr-text"
+          data-es="La barranca tiene su propio microclima: humedad permanente, sombra, corrientes de aire y una vegetación que no existe igual en ningún otro lugar. No es un paisaje. Es un entorno vivo donde el agave madura y el oficio ocurre."
+          data-en="The barranca has its own microclimate: constant humidity, shade, air currents and a flora that exists nowhere else in the same way. Not a backdrop — a living environment where the agave ripens and the craft takes place.">
+          La barranca tiene su propio microclima: humedad permanente, sombra, corrientes de aire y una vegetación que no existe igual en ningún otro lugar. No es un paisaje. Es un entorno vivo donde el agave madura y el oficio ocurre.
+        </p>
+      </div>
+
+      <div class="terr-card reveal d1">
+        <div class="terr-num">II</div>
+        <div class="terr-title"
+          data-es="Un proceso que se puede ver"
+          data-en="A process you can see">Un proceso que se puede ver</div>
+        <p class="terr-text"
+          data-es="No hay fórmulas ocultas. La tequilera se puede recorrer, oler y recordar. El oficio artesanal no necesita esconderse — porque cada decisión tiene una razón honesta."
+          data-en="No hidden formulas. The distillery can be walked through, smelled and remembered. Artisanal craft has nothing to hide — because every decision has an honest reason.">
+          No hay fórmulas ocultas. La tequilera se puede recorrer, oler y recordar. El oficio artesanal no necesita esconderse — porque cada decisión tiene una razón honesta.
+        </p>
+      </div>
+
+      <div class="terr-card reveal d2">
+        <div class="terr-num">III</div>
+        <div class="terr-title"
+          data-es="Pureza de origen"
+          data-en="Purity of origin">Pureza de origen</div>
+        <p class="terr-text"
+          data-es="Sin aditivos. Sin aceleradores. Sin atajos. Un perfil nacido del microclima, del proceso y de más de cien años de saber cómo — no de un laboratorio."
+          data-en="No additives. No accelerators. No shortcuts. A profile born from the microclimate, the process and over a century of knowing how — not from a laboratory.">
+          Sin aditivos. Sin aceleradores. Sin atajos. Un perfil nacido del microclima, del proceso y de más de cien años de saber cómo — no de un laboratorio.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="bat-callout reveal">
+      <svg class="bat-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M14 24V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M14 8C14 8 10 5 6 7C4 8 3 11 5 13C7 15 10 14 12 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 8C14 8 18 5 22 7C24 8 25 11 23 13C21 15 18 14 16 13" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 18C10 18 12 16 14 17C16 16 18 18 18 18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="bat-label"
+          data-es="Práctica Bat Friendly · Biodiversidad"
+          data-en="Bat Friendly Practice · Biodiversity">Práctica Bat Friendly · Biodiversidad</div>
+        <p class="bat-text"
+          data-es="Permitimos que una parte de nuestros agaves florezca. Los murciélagos nectarívoros los polinizan y sostienen la diversidad genética del agave silvestre. Un campo sano no es solo fuente de materia prima — es un compromiso con el territorio que nos dio origen."
+          data-en="We allow a portion of our agaves to flower. Nectar bats pollinate them and sustain the genetic diversity of wild agave. A healthy field is not just a source of raw material — it is a commitment to the land that gave us our origin.">
+          Permitimos que una parte de nuestros agaves florezca. Los murciélagos nectarívoros los polinizan y sostienen la diversidad genética del agave silvestre. Un campo sano no es solo fuente de materia prima — es un compromiso con el territorio que nos dio origen.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EL BLANCO
+     ============================================================ -->
+<section class="producto" id="producto">
+  <div class="wrap">
+
+    <div class="kicker reveal" data-es="Tequila"   data-en="Tequila">Tequila</div>
+
+    <div class="producto-grid">
+
+      <div class="bottle-col reveal">
+        <div class="bottle-aura"></div>
+        <div class="bottle-img-wrap">
+          <img
+            src="assets/botella-amatitan.jpg"
+            alt="Casa 1919 — Tequila Blanco, Amatitán, Jalisco"
+            loading="eager" fetchpriority="high">
+        </div>
+        <div class="bottle-tag bt-1 reveal">
+          <div class="bt-val">40°</div>
+          <div class="bt-key">Alc. Vol.</div>
+        </div>
+        <div class="bottle-tag bt-2 reveal d1">
+          <div class="bt-val">750 ml</div>
+          <div class="bt-key" data-es="Contenido neto" data-en="Net content">Contenido neto</div>
+        </div>
+      </div>
+
+      <div class="producto-text">
+        <h2 class="reveal" data-es="Casa 1919 Tequila" data-en="Casa 1919 Tequila">Casa 1919 Tequila</h2>
+        <p class="producto-desc reveal d1"
+          data-es="Cristalino como la intención con que fue hecho. Sin barrica que lo oculte, sin aditivos que lo corrijan. Solo el agave de Amatitán, siete años de paciencia, y el oficio de tres generaciones en cada gota."
+          data-en="Crystalline as the intention behind it. No barrel to hide it, no additives to correct it. Only Amatitán agave, seven years of patience, and three generations of craft in every drop.">
+          Cristalino como la intención con que fue hecho. Sin barrica que lo oculte, sin aditivos que lo corrijan. Solo el agave de Amatitán, siete años de paciencia, y el oficio de tres generaciones en cada gota.
+        </p>
+        <div class="specs reveal d2">
+          <div class="spec">
+            <div class="spec-k" data-es="Categoría" data-en="Category">Categoría</div>
+            <div class="spec-v" data-es="Tequila Blanco · Producción artesanal" data-en="Tequila Blanco · Artisanal production">Tequila Blanco · Producción artesanal</div>
+          </div>
+          <div class="spec">
+            <div class="spec-k" data-es="Agave" data-en="Agave">Agave</div>
+            <div class="spec-v" data-es="100% de agave · 7 años de madurez" data-en="100% agave · 7-year maturity">100% de agave · 7 años de madurez</div>
+          </div>
+          <div class="spec">
+            <div class="spec-k" data-es="Origen" data-en="Origin">Origen</div>
+            <div class="spec-v" data-es="Amatitán, Jalisco, México" data-en="Amatitán, Jalisco, Mexico">Amatitán, Jalisco, México</div>
+          </div>
+          <div class="spec">
+            <div class="spec-k" data-es="Alcohol / Contenido" data-en="Alcohol / Volume">Alcohol / Contenido</div>
+            <div class="spec-v">40% Alc. Vol. · 750 ml</div>
+          </div>
+          <div class="spec full">
+            <div class="spec-k" data-es="Certificación" data-en="Certification">Certificación</div>
+            <div class="spec-v">NOM-006-SCFI · CRT · RM1473</div>
+          </div>
+        </div>
+        <div class="cert-chips reveal d3">
+          <span class="cert-chip">NOM-006-SCFI</span>
+          <span class="cert-chip">CRT</span>
+          <span class="cert-chip">RM1473</span>
+          <span class="cert-chip" data-es="100% Agave"     data-en="100% Agave">100% Agave</span>
+          <span class="cert-chip" data-es="Hecho en México" data-en="Made in Mexico">Hecho en México</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottle gallery -->
+    <div class="bottle-gallery reveal">
+      <div class="gallery-header">
+        <div class="kicker" style="margin-bottom:0" data-es="Galería" data-en="Gallery">Galería</div>
+        <div class="gallery-hint">
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+            <path d="M1 5h16M12 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span data-es="Desliza" data-en="Swipe">Desliza</span>
+        </div>
+      </div>
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-card">
+          <img class="gallery-card-img"
+            src="assets/botella-amatitan.jpg"
+            alt="Casa 1919 Tequila Blanco" loading="lazy">
+          <div class="gallery-card-label">
+            <span data-es="Casa 1919 · Tequila" data-en="Casa 1919 · Tequila">Casa 1919 · Tequila</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img class="gallery-card-img"
+            src="assets/botella-atardecer.jpg"
+            alt="Paisaje agavero, Amatitán" loading="lazy">
+          <div class="gallery-card-label">
+            <span data-es="Amatitán · Jalisco" data-en="Amatitán · Jalisco">Amatitán · Jalisco</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img class="gallery-card-img"
+            src="assets/botella-tahona.jpg"
+            alt="Casa 1919 — botella y proceso artesanal" loading="lazy">
+          <div class="gallery-card-label">
+            <span data-es="Proceso · Artesanal" data-en="Process · Artisanal">Proceso · Artesanal</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img class="gallery-card-img"
+            src="assets/botella-producto.jpg"
+            alt="Casa 1919 — botella Tequila Blanco 750 ml" loading="lazy">
+          <div class="gallery-card-label">
+            <span data-es="750 ml · 40% Alc. Vol." data-en="750 ml · 40% Alc. Vol.">750 ml · 40% Alc. Vol.</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-progress" id="galleryProgress">
+        <div class="gallery-pip on" data-idx="0"></div>
+        <div class="gallery-pip" data-idx="1"></div>
+        <div class="gallery-pip" data-idx="2"></div>
+        <div class="gallery-pip" data-idx="3"></div>
+      </div>
+    </div>
+
+    <!-- Editorial image duo -->
+    <div class="editorial reveal-img">
+      <div class="editorial-img">
+        <img
+          src="assets/botella-tahona.jpg"
+          alt="Casa 1919 — botella frente a tahona volcánica con vapor y agave cocido"
+          loading="lazy">
+      </div>
+      <div class="editorial-text">
+        <div>
+          <blockquote class="reveal"
+            data-es="«No fabricamos sabores. Liberamos los que ya estaban ahí — esperando desde que el agave se plantó.»"
+            data-en="«We don't manufacture flavors. We release the ones already there — waiting since the agave was first planted.»">
+            «No fabricamos sabores. Liberamos los que ya estaban ahí — esperando desde que el agave se plantó.»
+          </blockquote>
+          <cite class="reveal d1"
+            data-es="— Casa 1919, Amatitán"
+            data-en="— Casa 1919, Amatitán">— Casa 1919, Amatitán</cite>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACTO
+     ============================================================ -->
+<section class="contacto" id="contacto">
+  <div class="contacto-bg" aria-hidden="true"></div>
+  <div class="wrap contacto-inner">
+    <div class="kicker light reveal"
+      data-es="Distribución y Exportación" data-en="Distribution & Export">Distribución y Exportación</div>
+    <h2 class="reveal d1"
+      data-es="Llevamos tres generaciones<br>de oficio a su mesa."
+      data-en="We bring three generations<br>of craft to your table.">
+      Llevamos tres generaciones<br>de oficio a su mesa.
+    </h2>
+    <p class="lead reveal d2"
+      data-es="Para quienes entienden que el origen auténtico no se declara en una etiqueta — se prueba en cada copa."
+      data-en="For those who understand that authentic origin isn't declared on a label — it's proven in every glass.">
+      Para quienes entienden que el origen auténtico no se declara en una etiqueta — se prueba en cada copa.
+    </p>
+    <div class="cta-row reveal d2">
+      <a class="btn-fill"  href="mailto:comercial@casa1919.mx"
+        data-es="Solicitar portafolio" data-en="Request portfolio">Solicitar portafolio</a>
+      <a class="btn-ghost" href="#top"
+        data-es="Agendar una visita"   data-en="Book a visit">Agendar una visita</a>
+    </div>
+    <div class="meta-row reveal d3">
+      <div class="meta-cell">
+        <h4 data-es="Mercados"  data-en="Markets">Mercados</h4>
+        <p  data-es="México · Europa · HORECA · Retail premium"
+            data-en="Mexico · Europe · HORECA · Premium retail">
+          México · Europa · HORECA · Retail premium
+        </p>
+      </div>
+      <div class="meta-cell">
+        <h4 data-es="Casa"  data-en="House">Casa</h4>
+        <p  data-es="Amatitán, Jalisco. A una hora de Guadalajara."
+            data-en="Amatitán, Jalisco. One hour from Guadalajara.">
+          Amatitán, Jalisco. A una hora de Guadalajara.
+        </p>
+      </div>
+      <div class="meta-cell">
+        <h4 data-es="Comercial" data-en="Commercial">Comercial</h4>
+        <p>comercial@casa1919.mx</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="agave" id="agaveFooter"></span>
+          <span>
+            <b>CASA 1919</b>
+            <small data-es="Tequila Blanco · Producción Artesanal" data-en="Tequila Blanco · Artisanal Production">Tequila Blanco · Producción Artesanal</small>
+          </span>
+        </div>
+      </div>
+      <div class="foot-producer">
+        <strong data-es="Producido en:" data-en="Produced at:">Producido en:</strong>
+        <span data-es="Tequilera de la Barranca de Amatitán, S.A. de C.V." data-en="Tequilera de la Barranca de Amatitán, S.A. de C.V.">Tequilera de la Barranca de Amatitán, S.A. de C.V.</span><br>
+        <span data-es="Amatitán, Jalisco · México" data-en="Amatitán, Jalisco · Mexico">Amatitán, Jalisco · México</span>
+      </div>
+      <div class="foot-links">
+        <a href="#" data-es="Aviso de Privacidad" data-en="Privacy Policy">Aviso de Privacidad</a>
+        <a href="#" data-es="Términos de Uso"     data-en="Terms of Use">Términos de Uso</a>
+        <a href="#" data-es="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a>
+      </div>
+    </div>
+    <p class="foot-warning"
+      data-es="El consumo de bebidas alcohólicas es exclusivo para adultos. Beber con moderación. Prohibida la venta de alcohol a menores de edad."
+      data-en="The consumption of alcoholic beverages is exclusively for adults. Drink responsibly. The sale of alcohol to minors is prohibited.">
+      El consumo de bebidas alcohólicas es exclusivo para adultos. Beber con moderación. Prohibida la venta de alcohol a menores de edad.
+    </p>
+    <div class="foot-bottom">
+      <p class="foot-copyright"
+        data-es="© 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados."
+        data-en="© 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. All rights reserved.">
+        © 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados.
+      </p>
+      <span class="foot-nom">NOM-006-SCFI · CRT · RM1473</span>
+    </div>
+  </footer>
+</section>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script>
+/* ---- AGAVE SVG ---- */
+const AGAVE = `<svg viewBox="0 0 200 104" xmlns="http://www.w3.org/2000/svg"
+  class="agave" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+  <g fill="currentColor">
+    <path d="M100,98 Q93.5,55 100,12 Q106.5,55 100,98Z"/>
+    <path d="M100,98 Q94.2,57 120.7,21.7 Q105.8,59 100,98Z"/>
+    <path d="M100,98 Q105.8,57 79.3,21.7 Q94.2,59 100,98Z"/>
+    <path d="M100,98 Q95.5,60.5 140,37 Q104.5,65.5 100,98Z"/>
+    <path d="M100,98 Q104.5,60.5 60,37 Q95.5,65.5 100,98Z"/>
+    <path d="M100,98 Q97.6,64.7 141.7,57.7 Q102.4,69.3 100,98Z"/>
+    <path d="M100,98 Q102.4,64.7 58.3,57.7 Q97.6,69.3 100,98Z"/>
+    <path d="M100,98 Q99.7,68 140.6,76.4 Q100.3,72 100,98Z"/>
+    <path d="M100,98 Q100.3,68 59.4,76.4 Q99.7,72 100,98Z"/>
+    <path d="M100,98 Q101.4,71.6 133.3,91 Q98.6,74.4 100,98Z"/>
+    <path d="M100,98 Q98.6,71.6 66.7,91 Q101.4,74.4 100,98Z"/>
+  </g>
+</svg>`;
+document.getElementById('agaveBrand').innerHTML  = AGAVE;
+document.getElementById('agaveFooter').innerHTML = AGAVE;
+document.getElementById('agaveGate').innerHTML   = AGAVE;
+
+/* ---- AGE GATE ---- */
+const ageGate = document.getElementById('ageGate');
+if (localStorage.getItem('casa1919_age_ok') === '1') {
+  ageGate.style.display = 'none';
+  document.body.style.overflow = '';
+} else {
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('ageYes').addEventListener('click', () => {
+  localStorage.setItem('casa1919_age_ok', '1');
+  ageGate.classList.add('hiding');
+  document.body.style.overflow = '';
+  setTimeout(() => { ageGate.style.display = 'none'; }, 720);
+});
+document.getElementById('ageNo').addEventListener('click', () => {
+  window.location.href = 'https://www.google.com';
+});
+
+/* ---- LANGUAGE ---- */
+const MARQUEE_DATA = [
+  { es:'Amatitán, Jalisco',             en:'Amatitán, Jalisco' },
+  { es:'100% Agave · Sin Aditivos',     en:'100% Agave · No Additives' },
+  { es:'Tres Generaciones',             en:'Three Generations' },
+  { es:'Producción Artesanal',          en:'Artisanal Production' },
+  { es:'Desde 1919',                    en:'Since 1919' },
+  { es:'Tahona Volcánica',              en:'Volcanic Tahona' },
+  { es:'Trabajo Honesto',               en:'Honest Work' },
+  { es:'Doble Destilación en Cobre',    en:'Copper Double Distillation' },
+  { es:'Hornos de Mampostería',         en:'Masonry Ovens' },
+  { es:'Fermentación Artesanal',         en:'Artisanal Fermentation' },
+  { es:'Barranca de Amatitán',          en:'Barranca de Amatitán' },
+  { es:'NOM-006-SCFI · CRT · RM1473',  en:'NOM-006-SCFI · CRT · RM1473' },
+];
+
+function buildMarquee(l) {
+  const items = [...MARQUEE_DATA, ...MARQUEE_DATA];
+  document.getElementById('marqueeInner').innerHTML =
+    items.map(d =>
+      `<span class="marquee-item">${d[l]}<span class="marquee-sep">·</span></span>`
+    ).join('');
+}
+
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-' + l + ']').forEach(el => {
+    const t = el.getAttribute('data-' + l);
+    if (t !== null) el.innerHTML = t;
+  });
+  document.getElementById('btnEs').classList.toggle('on', l === 'es');
+  document.getElementById('btnEn').classList.toggle('on', l === 'en');
+  buildMarquee(l);
+}
+buildMarquee('es');
+
+/* ---- NAV ---- */
+const nav       = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 60;
+  nav.classList.toggle('scrolled', scrolled);
+  nav.classList.toggle('light', !scrolled);
+}, { passive:true });
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+  })
+);
+
+/* ---- NAV ACTIVE SECTION ---- */
+const navSections = ['legado','oficio','producto','contacto'];
+let activeNavLink = null;
+const navActiveObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+    if (!link) return;
+    if (e.isIntersecting) {
+      if (activeNavLink) activeNavLink.classList.remove('active');
+      link.classList.add('active');
+      activeNavLink = link;
+    }
+  });
+}, { rootMargin:'-35% 0px -45% 0px', threshold:0 });
+navSections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) navActiveObs.observe(el);
+});
+
+/* ---- VIDEO HERO ---- */
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  const reveal = () => heroVideo.classList.add('ready');
+  heroVideo.addEventListener('canplay', reveal, { once:true });
+  if (heroVideo.readyState >= 3) reveal();
+}
+
+/* ---- SCROLL REVEAL ---- */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal, .reveal-img').forEach(el => revealObs.observe(el));
+
+/* ---- PARALLAX ON BLEED-BREAK ---- */
+const bleedImg = document.querySelector('.bleed-img');
+if (bleedImg) {
+  window.addEventListener('scroll', () => {
+    const rect = bleedImg.parentElement.getBoundingClientRect();
+    const cy   = rect.top + rect.height / 2 - window.innerHeight / 2;
+    bleedImg.style.transform = `translateY(${cy * 0.14}px)`;
+  }, { passive:true });
+}
+
+/* ---- STATS COUNTER ---- */
+function animateCount(el, target, duration) {
+  let start = null;
+  const run = ts => {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * target);
+    if (p < 1) requestAnimationFrame(run);
+  };
+  requestAnimationFrame(run);
+}
+
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.stat-item').forEach((item, i) => {
+      item.classList.add('in');
+      const target = parseInt(item.dataset.target);
+      if (!target) return;
+      const numEl = item.querySelector('.stat-num');
+      if (!numEl || isNaN(target)) return;
+      setTimeout(() => animateCount(numEl, target, 1400), i * 120);
+    });
+    statsObs.unobserve(e.target);
+  });
+}, { threshold:0.2 });
+const statsBand = document.getElementById('statsBand');
+if (statsBand) statsObs.observe(statsBand);
+
+/* ---- GALLERY ---- */
+const galleryTrack = document.getElementById('galleryTrack');
+const galleryPips  = document.querySelectorAll('.gallery-pip');
+
+function updateGalleryPip() {
+  if (!galleryTrack) return;
+  const cards  = galleryTrack.querySelectorAll('.gallery-card');
+  const sw     = galleryTrack.offsetWidth;
+  const scroll = galleryTrack.scrollLeft;
+  let activeIdx = 0;
+  cards.forEach((c, i) => {
+    if (c.offsetLeft <= scroll + sw / 2) activeIdx = i;
+  });
+  galleryPips.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
+}
+
+if (galleryTrack) {
+  galleryTrack.addEventListener('scroll', updateGalleryPip, { passive:true });
+
+  /* pip click */
+  galleryPips.forEach(pip => {
+    pip.addEventListener('click', () => {
+      const idx   = parseInt(pip.dataset.idx);
+      const cards = galleryTrack.querySelectorAll('.gallery-card');
+      if (cards[idx]) {
+        galleryTrack.scrollTo({ left: cards[idx].offsetLeft, behavior:'smooth' });
+      }
+    });
+  });
+
+  /* drag-to-scroll */
+  let isDragging = false, startX = 0, startScroll = 0;
+  galleryTrack.addEventListener('mousedown', e => {
+    isDragging = true; startX = e.pageX; startScroll = galleryTrack.scrollLeft;
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    galleryTrack.scrollLeft = startScroll - (e.pageX - startX);
+  });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+}
+
+/* ---- OFICIO STICKY SCROLL ---- */
+const STEPS    = 6;
+const oScroll  = document.getElementById('oficioScroll');
+const oSteps   = document.querySelectorAll('.oficio-step');
+const oBgs     = document.querySelectorAll('.oficio-bg');
+const oDots    = document.querySelectorAll('.oficio-dot');
+const oBarFill = document.getElementById('oficioBarFill');
+let   curStep  = 0;
+
+function goToStep(idx) {
+  if (idx === curStep && document.querySelector('.oficio-step.on')) return;
+  curStep = idx;
+  oSteps.forEach((el, i) => el.classList.toggle('on', i === idx));
+  oBgs.forEach((el,   i) => el.classList.toggle('on', i === idx));
+  oDots.forEach((el,  i) => el.classList.toggle('on', i === idx));
+  oBarFill.style.width = ((idx + 1) / STEPS * 100) + '%';
+}
+
+window.addEventListener('scroll', () => {
+  if (!oScroll) return;
+  const rect  = oScroll.getBoundingClientRect();
+  const total = oScroll.offsetHeight - window.innerHeight;
+  const prog  = Math.max(0, Math.min(1, -rect.top / total));
+  goToStep(Math.min(Math.floor(prog * STEPS), STEPS - 1));
+}, { passive:true });
+
+oDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const g     = parseInt(dot.dataset.goto);
+    const top   = oScroll.getBoundingClientRect().top + window.scrollY;
+    const total = oScroll.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: top + (g / STEPS) * total, behavior:'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
