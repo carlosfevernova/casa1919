@@ -3,12 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#072e52">
+<meta name="color-scheme" content="light">
 <title>Casa 1919 · Tequila Blanco — Producción Artesanal · Amatitán, Jalisco</title>
 <meta name="description" content="Casa 1919 — Tequila Blanco de producción artesanal. 100% agave de madurez extrema. Tres generaciones de oficio en Amatitán, Jalisco, México.">
+<meta name="author" content="Tequilera de la Barranca de Amatitán, S.A. de C.V.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://casa1919.mx/">
+<link rel="alternate" hreflang="es-MX" href="https://casa1919.mx/">
+<link rel="alternate" hreflang="en" href="https://casa1919.mx/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://casa1919.mx/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.json">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Casa 1919">
+<meta property="og:title" content="Casa 1919 · Tequila Blanco — Producción Artesanal">
+<meta property="og:description" content="Tres generaciones de oficio en Amatitán, Jalisco. 100% agave, sin aditivos, sin atajos.">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://casa1919.mx/assets/botella-atardecer.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://casa1919.mx/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa 1919 · Tequila Blanco">
+<meta name="twitter:description" content="Tres generaciones de oficio en Amatitán, Jalisco.">
+<meta name="twitter:image" content="https://casa1919.mx/assets/botella-atardecer.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://casa1919.mx/#org",
+      "name": "Tequilera de la Barranca de Amatitán, S.A. de C.V.",
+      "brand": { "@type": "Brand", "name": "Casa 1919" },
+      "url": "https://casa1919.mx/",
+      "logo": "https://casa1919.mx/favicon.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amatitán",
+        "addressRegion": "Jalisco",
+        "addressCountry": "MX"
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://casa1919.mx/#website",
+      "url": "https://casa1919.mx/",
+      "name": "Casa 1919",
+      "publisher": { "@id": "https://casa1919.mx/#org" },
+      "inLanguage": ["es-MX","en"]
+    },
+    {
+      "@type": "Product",
+      "name": "Casa 1919 · Tequila Blanco",
+      "image": [
+        "https://casa1919.mx/assets/botella-amatitan.jpg",
+        "https://casa1919.mx/assets/botella-producto.jpg"
+      ],
+      "description": "Tequila Blanco de producción artesanal. 100% agave de madurez extrema, cocido en hornos de mampostería, molido en tahona volcánica y destilado dos veces en cobre.",
+      "brand": { "@type": "Brand", "name": "Casa 1919" },
+      "manufacturer": { "@id": "https://casa1919.mx/#org" },
+      "countryOfOrigin": "MX",
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Categoría", "value": "Tequila Blanco" },
+        { "@type": "PropertyValue", "name": "Agave", "value": "100% de agave, 7 años de madurez" },
+        { "@type": "PropertyValue", "name": "Alcohol", "value": "40% Alc. Vol." },
+        { "@type": "PropertyValue", "name": "Contenido", "value": "750 ml" },
+        { "@type": "PropertyValue", "name": "Certificación", "value": "NOM-006-SCFI · CRT · RM1473" },
+        { "@type": "PropertyValue", "name": "Origen", "value": "Amatitán, Jalisco, México" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
+/* ============================================================
+   VIEW TRANSITIONS (Chromium + Safari 18.2+, silent fallback)
+   ============================================================ */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .5s; }
+
 /* ============================================================
    VARIABLES
    ============================================================ */
@@ -47,6 +134,33 @@ body {
 ::selection { background:var(--indigo); color:var(--blanco); }
 img { display:block; max-width:100%; }
 a { text-decoration:none; }
+
+/* Metric-matched fallback font (evita CLS mientras carga la web font) */
+@font-face {
+  font-family: 'Serif Fallback';
+  src: local('Georgia'), local('Times New Roman');
+  size-adjust: 105%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+body { font-family: var(--serif), 'Serif Fallback', Georgia, serif; }
+
+/* content-visibility en secciones below-fold: LCP y INP más rápidos */
+.legado, .territorio, .producto, .contacto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* Focus visible reforzado — WCAG 2.2 */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--cielo);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Target size mínimo 24×24 CSS px — WCAG 2.2 (2.5.8) */
+.nav-links a, .lang button, .oficio-dot, .gallery-pip { min-height: 24px; }
 
 /* paper grain overlay */
 body::after {
@@ -959,6 +1073,115 @@ footer {
   .foot-bottom     { flex-direction:column; text-align:center; }
 }
 
+/* ============================================================
+   AGE GATE — DOB FORM (compliance US Distilled Spirits Council)
+   ============================================================ */
+.age-gate-form {
+  display:flex; flex-direction:column; gap:14px; align-items:center;
+  opacity:0; animation:fadeup .9s var(--ease-out) .68s forwards;
+  width:100%; max-width:360px;
+}
+.age-country {
+  display:flex; gap:8px; width:100%;
+}
+.age-country button {
+  flex:1; padding:11px 8px; background:transparent;
+  border:1px solid rgba(255,255,255,.28); color:rgba(255,255,255,.7);
+  font-family:var(--sans); font-size:9px; letter-spacing:.24em;
+  text-transform:uppercase; cursor:pointer; border-radius:1px;
+  transition:.3s; min-height:44px;
+}
+.age-country button.on { background:var(--blanco); color:var(--indigo); border-color:var(--blanco); }
+.age-dob-row { display:grid; grid-template-columns:1fr 1fr 1.4fr; gap:8px; width:100%; }
+.age-dob-row input {
+  padding:11px 8px; background:transparent;
+  border:1px solid rgba(255,255,255,.28); color:var(--blanco);
+  font-family:var(--sans); font-size:15px; letter-spacing:.06em;
+  text-align:center; border-radius:1px; min-height:44px;
+  -moz-appearance:textfield;
+}
+.age-dob-row input::-webkit-outer-spin-button,
+.age-dob-row input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; }
+.age-dob-row input:focus { border-color:var(--cielo); outline:none; }
+.age-dob-row input::placeholder { color:rgba(255,255,255,.35); letter-spacing:.14em; }
+.age-submit {
+  width:100%; margin-top:6px; padding:14px 22px;
+  background:var(--blanco); color:var(--indigo);
+  font-family:var(--sans); font-size:9.5px; letter-spacing:.28em;
+  text-transform:uppercase; border:none; cursor:pointer; border-radius:1px;
+  transition:background .35s; min-height:48px;
+}
+.age-submit:hover:not(:disabled) { background:var(--cielo-2); }
+.age-submit:disabled { opacity:.45; cursor:not-allowed; }
+.age-error {
+  font-family:var(--sans); font-size:10px; letter-spacing:.14em;
+  color:#ffb3b3; margin-top:6px; opacity:0; transition:opacity .3s;
+  min-height:14px;
+}
+.age-error.on { opacity:1; }
+
+/* ============================================================
+   COOKIE BANNER — compliance GDPR + LFPDPPP MX
+   ============================================================ */
+.cookie-bar {
+  position:fixed; left:16px; right:16px; bottom:16px; z-index:9998;
+  background:rgba(7,46,82,.97); backdrop-filter:blur(14px);
+  color:rgba(255,255,255,.85); border:1px solid rgba(183,213,232,.2);
+  border-radius:4px; padding:18px 22px;
+  display:none; grid-template-columns:1fr auto;
+  gap:14px; align-items:center;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.5);
+  max-width:960px; margin:0 auto;
+  animation:fadeup .5s var(--ease-out) both;
+}
+.cookie-bar.show { display:grid; }
+.cookie-text {
+  font-family:var(--sans); font-size:12px; letter-spacing:.02em;
+  line-height:1.55; color:rgba(255,255,255,.78);
+}
+.cookie-text a { color:var(--cielo); text-decoration:underline; text-underline-offset:2px; }
+.cookie-buttons { display:flex; gap:10px; flex-shrink:0; }
+.cookie-btn {
+  padding:10px 18px; font-family:var(--sans); font-size:9.5px;
+  letter-spacing:.24em; text-transform:uppercase;
+  border-radius:1px; cursor:pointer; border:none;
+  transition:background .3s, border-color .3s; min-height:38px;
+}
+.cookie-accept { background:var(--blanco); color:var(--indigo); }
+.cookie-accept:hover { background:var(--cielo-2); }
+.cookie-reject {
+  background:transparent; color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.32);
+}
+.cookie-reject:hover { border-color:rgba(255,255,255,.6); background:rgba(255,255,255,.06); }
+@media (max-width:640px) {
+  .cookie-bar { grid-template-columns:1fr; gap:14px; padding:16px; }
+  .cookie-buttons { justify-content:stretch; }
+  .cookie-btn { flex:1; text-align:center; }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION — WCAG 2.2, respeto obligatorio
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-video { display: none !important; }
+  .hero-poster { opacity: 1 !important; }
+  .marquee-inner { animation: none !important; }
+  .scroll-line { animation: none !important; }
+  .bleed-img { transform: none !important; }
+  .bottle-img-wrap img,
+  .gallery-card:hover .gallery-card-img,
+  .editorial-img:hover img,
+  .legado-img-wrap:hover img { transform: none !important; }
+  .reveal, .reveal-img, .stat-item { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}
+
 @media (max-width:640px) {
   .nav-links { display:none; }
   .nav-toggle {
@@ -997,18 +1220,18 @@ footer {
 <body>
 
 <!-- ============================================================
-     AGE GATE
+     AGE GATE — DOB + país (compliance US Distilled Spirits Council)
      ============================================================ -->
-<div id="ageGate" class="age-gate">
+<div id="ageGate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
   <div class="age-gate-bg" aria-hidden="true"></div>
   <div class="age-gate-grain" aria-hidden="true"></div>
   <div class="age-gate-lang">
-    <button id="ageEs" class="on" onclick="setLang('es');this.classList.add('on');document.getElementById('ageEn').classList.remove('on')">ES</button>
-    <button id="ageEn"           onclick="setLang('en');this.classList.add('on');document.getElementById('ageEs').classList.remove('on')">EN</button>
+    <button id="ageEs" class="on" type="button" aria-label="Español">ES</button>
+    <button id="ageEn"           type="button" aria-label="English">EN</button>
   </div>
   <div class="age-gate-inner">
     <div class="age-gate-logo" id="agaveGate"></div>
-    <div class="age-gate-title">CASA 1919</div>
+    <div id="ageGateTitle" class="age-gate-title">CASA 1919</div>
     <div class="age-gate-rule">
       <span></span>
       <i data-es="Tequila Blanco" data-en="Tequila Blanco">Tequila Blanco</i>
@@ -1020,28 +1243,52 @@ footer {
       Este sitio contiene contenido sobre bebidas alcohólicas. El acceso es exclusivo para personas mayores de edad.
     </p>
     <p class="age-gate-question"
-      data-es="¿Eres mayor de 18 años?"
-      data-en="Are you 18 years of age or older?">
-      ¿Eres mayor de 18 años?
+      data-es="Ingresa tu fecha de nacimiento"
+      data-en="Please enter your date of birth">
+      Ingresa tu fecha de nacimiento
     </p>
-    <div class="age-gate-btns">
-      <button class="age-btn-yes" id="ageYes"
-        data-es="Soy mayor de edad"
-        data-en="I am of legal age">
-        Soy mayor de edad
-      </button>
-      <button class="age-btn-no" id="ageNo"
-        data-es="Soy menor de edad"
-        data-en="I am under age">
-        Soy menor de edad
-      </button>
-    </div>
+
+    <form id="ageForm" class="age-gate-form" autocomplete="off" novalidate>
+      <div class="age-country" role="radiogroup" aria-label="País / Country">
+        <button type="button" class="on" data-country="MX"
+          data-es="México · 18+" data-en="Mexico · 18+">México · 18+</button>
+        <button type="button" data-country="US"
+          data-es="EE. UU. · 21+" data-en="USA · 21+">EE. UU. · 21+</button>
+        <button type="button" data-country="OTHER"
+          data-es="Otro · edad legal" data-en="Other · legal age">Otro · edad legal</button>
+      </div>
+      <div class="age-dob-row">
+        <input type="number" id="ageDay"   min="1" max="31"   placeholder="DD"   inputmode="numeric" aria-label="Día / Day"     required>
+        <input type="number" id="ageMonth" min="1" max="12"   placeholder="MM"   inputmode="numeric" aria-label="Mes / Month"   required>
+        <input type="number" id="ageYear"  min="1900" max="2020" placeholder="AAAA" inputmode="numeric" aria-label="Año / Year" required>
+      </div>
+      <button type="submit" class="age-submit" id="ageSubmit"
+        data-es="Ingresar" data-en="Enter">Ingresar</button>
+      <p id="ageError" class="age-error" role="alert" aria-live="polite"></p>
+    </form>
+
     <p class="age-gate-note"
-      data-es="Al continuar confirmas que eres mayor de edad conforme a las leyes de tu país. El consumo de bebidas alcohólicas está prohibido para menores."
-      data-en="By continuing you confirm you are of legal drinking age in your country. The consumption of alcoholic beverages by minors is prohibited.">
-      Al continuar confirmas que eres mayor de edad conforme a las leyes de tu país.<br>
-      El consumo de bebidas alcohólicas está prohibido para menores.
+      data-es="Al continuar declaras bajo protesta de decir verdad que tienes la edad legal para consumir bebidas alcohólicas en tu país. El consumo excesivo de alcohol es nocivo para la salud."
+      data-en="By continuing you declare under penalty of perjury that you are of legal drinking age in your country. Excessive alcohol consumption is harmful to your health.">
+      Al continuar declaras bajo protesta de decir verdad que tienes la edad legal para consumir bebidas alcohólicas en tu país. El consumo excesivo de alcohol es nocivo para la salud.
     </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     COOKIE BANNER
+     ============================================================ -->
+<div id="cookieBar" class="cookie-bar" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p class="cookie-text"
+    data-es='Usamos almacenamiento local únicamente para recordar tu verificación de edad, tu idioma y esta decisión. No usamos cookies de análisis ni de marketing. Consulta nuestra <a href="/cookies">Política de Cookies</a>.'
+    data-en='We use local storage only to remember your age verification, your language and this choice. We do not use analytics or marketing cookies. See our <a href="/cookies">Cookie Policy</a>.'>
+    Usamos almacenamiento local únicamente para recordar tu verificación de edad, tu idioma y esta decisión. No usamos cookies de análisis ni de marketing. Consulta nuestra <a href="/cookies">Política de Cookies</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button type="button" class="cookie-btn cookie-reject" id="cookieReject"
+      data-es="Rechazar" data-en="Reject">Rechazar</button>
+    <button type="button" class="cookie-btn cookie-accept" id="cookieAccept"
+      data-es="Aceptar" data-en="Accept">Aceptar</button>
   </div>
 </div>
 
@@ -1079,10 +1326,10 @@ footer {
     src="assets/botella-atardecer.jpg"
     alt="Casa 1919 — Tequila Blanco, Amatitán"
     fetchpriority="high">
-  <video class="hero-video" autoplay muted loop playsinline
-    poster="assets/botella-atardecer.jpg">
+  <video class="hero-video" muted loop playsinline preload="none"
+    poster="assets/botella-atardecer.jpg" aria-hidden="true">
+    <source src="assets/hero-fallback.mp4" type="video/mp4" media="(max-width: 900px)">
     <source src="assets/hero.mp4"          type="video/mp4">
-    <source src="assets/hero-fallback.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
@@ -1262,7 +1509,7 @@ footer {
         <img src="assets/hornos-agave.jpg" alt="" loading="lazy" aria-hidden="true">
       </div>
       <div class="oficio-bg" id="obg2">
-        <video autoplay muted loop playsinline
+        <video class="tahona-video" muted loop playsinline preload="none"
           poster="assets/tahona-nueva.jpg"
           aria-hidden="true">
           <source src="assets/tahona-loop.mp4" type="video/mp4">
@@ -1327,10 +1574,10 @@ footer {
             <div class="oficio-step" data-idx="4">
               <div class="oficio-step-n">05</div>
               <div class="oficio-eyebrow" data-es="Identidad" data-en="Identity">Identidad</div>
-              <h3 data-es="Fermentación<br>viva" data-en="Living<br>fermentation">Fermentación<br>viva</h3>
-              <p data-es="El proceso no se acelera. Se respeta. El mosto fermenta en diálogo con el entorno de la barranca — y lo que nace tiene carácter propio, identidad de origen, algo que ninguna fórmula puede replicar."
-                 data-en="The process is not rushed. It is respected. The must ferments in dialogue with the barranca's environment — and what is born has its own character, its own identity, something no formula can replicate.">
-                El proceso no se acelera. Se respeta. El mosto fermenta en diálogo con el entorno de la barranca — y lo que nace tiene carácter propio, identidad de origen, algo que ninguna fórmula puede replicar.
+              <h3 data-es="Levaduras<br>endémicas" data-en="Endemic<br>yeasts">Levaduras<br>endémicas</h3>
+              <p data-es="No las importamos, no las compramos. Viven en el aire de la barranca, en la madera de las tinas, en la piel del propio agave. Son ellas —invisibles, silenciosas— las que dejan una huella que ningún laboratorio ha logrado imitar. Fermentar aquí es dejar que el lugar hable primero."
+                 data-en="We don't import them, we don't buy them. They live in the air of the barranca, in the wood of the vats, in the very skin of the agave. It is they —invisible, silent— who leave a fingerprint no laboratory has managed to imitate. To ferment here is to let the place speak first.">
+                No las importamos, no las compramos. Viven en el aire de la barranca, en la madera de las tinas, en la piel del propio agave. Son ellas —invisibles, silenciosas— las que dejan una huella que ningún laboratorio ha logrado imitar. Fermentar aquí es dejar que el lugar hable primero.
               </p>
             </div>
 
@@ -1364,7 +1611,7 @@ footer {
               <span class="dot-dash"></span>
             </button>
             <button class="oficio-dot" data-goto="4">
-              <span data-es="Fermentación" data-en="Fermentation">Fermentación</span>
+              <span data-es="Levaduras"    data-en="Yeasts">Levaduras</span>
               <span class="dot-dash"></span>
             </button>
             <button class="oficio-dot" data-goto="5">
@@ -1677,9 +1924,9 @@ footer {
         <span data-es="Amatitán, Jalisco · México" data-en="Amatitán, Jalisco · Mexico">Amatitán, Jalisco · México</span>
       </div>
       <div class="foot-links">
-        <a href="#" data-es="Aviso de Privacidad" data-en="Privacy Policy">Aviso de Privacidad</a>
-        <a href="#" data-es="Términos de Uso"     data-en="Terms of Use">Términos de Uso</a>
-        <a href="#" data-es="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a>
+        <a href="/aviso-privacidad" data-es="Aviso de Privacidad" data-en="Privacy Policy">Aviso de Privacidad</a>
+        <a href="/terminos"         data-es="Términos de Uso"     data-en="Terms of Use">Términos de Uso</a>
+        <a href="/cookies"          data-es="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a>
       </div>
     </div>
     <p class="foot-warning"
@@ -1689,9 +1936,9 @@ footer {
     </p>
     <div class="foot-bottom">
       <p class="foot-copyright"
-        data-es="© 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados."
-        data-en="© 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. All rights reserved.">
-        © 2025 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados.
+        data-es="© 2026 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados."
+        data-en="© 2026 Tequilera de la Barranca de Amatitán, S.A. de C.V. All rights reserved.">
+        © 2026 Tequilera de la Barranca de Amatitán, S.A. de C.V. Todos los derechos reservados.
       </p>
       <span class="foot-nom">NOM-006-SCFI · CRT · RM1473</span>
     </div>
@@ -1702,6 +1949,11 @@ footer {
      SCRIPTS
      ============================================================ -->
 <script>
+'use strict';
+
+/* Detección global: prefers-reduced-motion */
+const REDUCED_MOTION = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /* ---- AGAVE SVG ---- */
 const AGAVE = `<svg viewBox="0 0 200 104" xmlns="http://www.w3.org/2000/svg"
   class="agave" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -1723,26 +1975,8 @@ document.getElementById('agaveBrand').innerHTML  = AGAVE;
 document.getElementById('agaveFooter').innerHTML = AGAVE;
 document.getElementById('agaveGate').innerHTML   = AGAVE;
 
-/* ---- AGE GATE ---- */
-const ageGate = document.getElementById('ageGate');
-if (localStorage.getItem('casa1919_age_ok') === '1') {
-  ageGate.style.display = 'none';
-  document.body.style.overflow = '';
-} else {
-  document.body.style.overflow = 'hidden';
-}
-
-document.getElementById('ageYes').addEventListener('click', () => {
-  localStorage.setItem('casa1919_age_ok', '1');
-  ageGate.classList.add('hiding');
-  document.body.style.overflow = '';
-  setTimeout(() => { ageGate.style.display = 'none'; }, 720);
-});
-document.getElementById('ageNo').addEventListener('click', () => {
-  window.location.href = 'https://www.google.com';
-});
-
-/* ---- LANGUAGE ---- */
+/* ---- LANGUAGE (con persistencia) ---- */
+const LANG_KEY = 'casa1919_lang';
 const MARQUEE_DATA = [
   { es:'Amatitán, Jalisco',             en:'Amatitán, Jalisco' },
   { es:'100% Agave · Sin Aditivos',     en:'100% Agave · No Additives' },
@@ -1753,50 +1987,171 @@ const MARQUEE_DATA = [
   { es:'Trabajo Honesto',               en:'Honest Work' },
   { es:'Doble Destilación en Cobre',    en:'Copper Double Distillation' },
   { es:'Hornos de Mampostería',         en:'Masonry Ovens' },
-  { es:'Fermentación Artesanal',         en:'Artisanal Fermentation' },
+  { es:'Levaduras Endémicas',           en:'Endemic Yeasts' },
   { es:'Barranca de Amatitán',          en:'Barranca de Amatitán' },
-  { es:'NOM-006-SCFI · CRT · RM1473',  en:'NOM-006-SCFI · CRT · RM1473' },
+  { es:'NOM-006-SCFI · CRT · RM1473',   en:'NOM-006-SCFI · CRT · RM1473' },
 ];
 
 function buildMarquee(l) {
   const items = [...MARQUEE_DATA, ...MARQUEE_DATA];
-  document.getElementById('marqueeInner').innerHTML =
-    items.map(d =>
-      `<span class="marquee-item">${d[l]}<span class="marquee-sep">·</span></span>`
-    ).join('');
+  const el = document.getElementById('marqueeInner');
+  if (!el) return;
+  el.innerHTML = items.map(d =>
+    `<span class="marquee-item">${d[l]}<span class="marquee-sep">·</span></span>`
+  ).join('');
 }
 
 function setLang(l) {
-  document.documentElement.lang = l;
+  document.documentElement.lang = l === 'en' ? 'en' : 'es-MX';
   document.querySelectorAll('[data-' + l + ']').forEach(el => {
     const t = el.getAttribute('data-' + l);
     if (t !== null) el.innerHTML = t;
   });
-  document.getElementById('btnEs').classList.toggle('on', l === 'es');
-  document.getElementById('btnEn').classList.toggle('on', l === 'en');
+  ['btnEs','ageEs'].forEach(id => document.getElementById(id)?.classList.toggle('on', l === 'es'));
+  ['btnEn','ageEn'].forEach(id => document.getElementById(id)?.classList.toggle('on', l === 'en'));
   buildMarquee(l);
+  try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
 }
-buildMarquee('es');
+
+const savedLang = (() => { try { return localStorage.getItem(LANG_KEY); } catch(e) { return null; } })();
+const urlLang = new URLSearchParams(location.search).get('lang');
+const initialLang = (urlLang === 'en' || urlLang === 'es') ? urlLang
+                  : (savedLang === 'en' || savedLang === 'es') ? savedLang
+                  : (navigator.language && navigator.language.startsWith('en')) ? 'en' : 'es';
+setLang(initialLang);
+
+document.getElementById('ageEs').addEventListener('click', () => setLang('es'));
+document.getElementById('ageEn').addEventListener('click', () => setLang('en'));
+document.getElementById('btnEs').addEventListener('click', () => setLang('es'));
+document.getElementById('btnEn').addEventListener('click', () => setLang('en'));
+
+/* ---- AGE GATE (DOB + país, sessionStorage) ---- */
+const AGE_KEY = 'casa1919_age_ok';
+const AGE_LIMITS = { MX: 18, US: 21, OTHER: 18 };
+const ageGate = document.getElementById('ageGate');
+const ageForm = document.getElementById('ageForm');
+const ageError = document.getElementById('ageError');
+const ageDay = document.getElementById('ageDay');
+const ageMonth = document.getElementById('ageMonth');
+const ageYear = document.getElementById('ageYear');
+let selectedCountry = 'MX';
+
+function hideAgeGate() {
+  ageGate.classList.add('hiding');
+  document.body.style.overflow = '';
+  setTimeout(() => { ageGate.style.display = 'none'; showCookieBar(); }, 720);
+}
+
+function checkAgeSession() {
+  try {
+    if (sessionStorage.getItem(AGE_KEY) === '1') {
+      ageGate.style.display = 'none';
+      document.body.style.overflow = '';
+      showCookieBar();
+      return true;
+    }
+  } catch(e) {}
+  document.body.style.overflow = 'hidden';
+  return false;
+}
+
+document.querySelectorAll('.age-country button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.age-country button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    selectedCountry = btn.dataset.country;
+  });
+});
+
+// Auto-avance entre campos
+ageDay.addEventListener('input', () => { if (ageDay.value.length >= 2) ageMonth.focus(); });
+ageMonth.addEventListener('input', () => { if (ageMonth.value.length >= 2) ageYear.focus(); });
+
+function computeAge(d, m, y) {
+  const today = new Date();
+  let age = today.getFullYear() - y;
+  const mDiff = today.getMonth() + 1 - m;
+  if (mDiff < 0 || (mDiff === 0 && today.getDate() < d)) age--;
+  return age;
+}
+
+function showAgeError(msg) {
+  ageError.textContent = msg;
+  ageError.classList.add('on');
+}
+
+ageForm.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  ageError.classList.remove('on');
+  const d = parseInt(ageDay.value, 10);
+  const m = parseInt(ageMonth.value, 10);
+  const y = parseInt(ageYear.value, 10);
+  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  const MSG = {
+    invalid: { es: 'Por favor ingresa una fecha válida.', en: 'Please enter a valid date.' },
+    underage: { es: 'Lo sentimos, no puedes acceder a este sitio.', en: 'Sorry, you cannot access this site.' }
+  };
+  if (!d || !m || !y || d < 1 || d > 31 || m < 1 || m > 12 || y < 1900 || y > new Date().getFullYear()) {
+    showAgeError(MSG.invalid[lang]); return;
+  }
+  const testDate = new Date(y, m - 1, d);
+  if (testDate.getFullYear() !== y || testDate.getMonth() !== m - 1 || testDate.getDate() !== d) {
+    showAgeError(MSG.invalid[lang]); return;
+  }
+  const age = computeAge(d, m, y);
+  const min = AGE_LIMITS[selectedCountry] || 18;
+  if (age < min) {
+    showAgeError(MSG.underage[lang]);
+    setTimeout(() => { location.href = 'https://www.google.com'; }, 1600);
+    return;
+  }
+  try { sessionStorage.setItem(AGE_KEY, '1'); } catch(e) {}
+  hideAgeGate();
+});
+
+checkAgeSession();
+
+/* ---- COOKIE BANNER ---- */
+const COOKIE_KEY = 'casa1919_cookie_ok';
+const cookieBar = document.getElementById('cookieBar');
+function showCookieBar() {
+  try { if (localStorage.getItem(COOKIE_KEY)) return; } catch(e) {}
+  setTimeout(() => cookieBar.classList.add('show'), 900);
+}
+function persistCookieChoice(v) {
+  try { localStorage.setItem(COOKIE_KEY, v); } catch(e) {}
+  cookieBar.classList.remove('show');
+}
+document.getElementById('cookieAccept').addEventListener('click', () => persistCookieChoice('accept'));
+document.getElementById('cookieReject').addEventListener('click', () => persistCookieChoice('reject'));
 
 /* ---- NAV ---- */
 const nav       = document.getElementById('nav');
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
+let navRaf = 0;
 window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY > 60;
-  nav.classList.toggle('scrolled', scrolled);
-  nav.classList.toggle('light', !scrolled);
+  if (navRaf) return;
+  navRaf = requestAnimationFrame(() => {
+    const scrolled = window.scrollY > 60;
+    nav.classList.toggle('scrolled', scrolled);
+    nav.classList.toggle('light', !scrolled);
+    navRaf = 0;
+  });
 }, { passive:true });
 
 navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  navToggle.classList.toggle('open');
+  const open = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
 });
+navToggle.setAttribute('aria-expanded', 'false');
 navLinks.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
   })
 );
 
@@ -1819,12 +2174,20 @@ navSections.forEach(id => {
   if (el) navActiveObs.observe(el);
 });
 
-/* ---- VIDEO HERO ---- */
+/* ---- VIDEO HERO (autoplay solo si NO reduced-motion + conexión decente) ---- */
 const heroVideo = document.querySelector('.hero-video');
-if (heroVideo) {
-  const reveal = () => heroVideo.classList.add('ready');
-  heroVideo.addEventListener('canplay', reveal, { once:true });
-  if (heroVideo.readyState >= 3) reveal();
+if (heroVideo && !REDUCED_MOTION) {
+  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const saveData = conn?.saveData === true;
+  const slow = conn && /^(slow-2g|2g|3g)$/.test(conn.effectiveType || '');
+  if (!saveData && !slow) {
+    heroVideo.setAttribute('preload', 'metadata');
+    heroVideo.addEventListener('canplay', () => heroVideo.classList.add('ready'), { once:true });
+    // Kick off autoplay una vez que el usuario ha pasado el age gate
+    const startVideo = () => { heroVideo.play().catch(() => {}); };
+    if (sessionStorage.getItem(AGE_KEY) === '1') startVideo();
+    else document.getElementById('ageForm').addEventListener('submit', () => setTimeout(startVideo, 800), { once:true });
+  }
 }
 
 /* ---- SCROLL REVEAL ---- */
@@ -1838,14 +2201,20 @@ const revealObs = new IntersectionObserver(entries => {
 }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
 document.querySelectorAll('.reveal, .reveal-img').forEach(el => revealObs.observe(el));
 
-/* ---- PARALLAX ON BLEED-BREAK ---- */
+/* ---- PARALLAX ON BLEED-BREAK (rAF throttled, respeta reduced-motion) ---- */
 const bleedImg = document.querySelector('.bleed-img');
-if (bleedImg) {
-  window.addEventListener('scroll', () => {
+if (bleedImg && !REDUCED_MOTION) {
+  let parallaxRaf = 0;
+  const updateParallax = () => {
     const rect = bleedImg.parentElement.getBoundingClientRect();
     const cy   = rect.top + rect.height / 2 - window.innerHeight / 2;
-    bleedImg.style.transform = `translateY(${cy * 0.14}px)`;
+    bleedImg.style.transform = `translate3d(0, ${cy * 0.14}px, 0)`;
+    parallaxRaf = 0;
+  };
+  window.addEventListener('scroll', () => {
+    if (!parallaxRaf) parallaxRaf = requestAnimationFrame(updateParallax);
   }, { passive:true });
+  updateParallax();
 }
 
 /* ---- STATS COUNTER ---- */
@@ -1920,14 +2289,16 @@ if (galleryTrack) {
   window.addEventListener('mouseup', () => { isDragging = false; });
 }
 
-/* ---- OFICIO STICKY SCROLL ---- */
-const STEPS    = 6;
-const oScroll  = document.getElementById('oficioScroll');
-const oSteps   = document.querySelectorAll('.oficio-step');
-const oBgs     = document.querySelectorAll('.oficio-bg');
-const oDots    = document.querySelectorAll('.oficio-dot');
-const oBarFill = document.getElementById('oficioBarFill');
-let   curStep  = 0;
+/* ---- OFICIO STICKY SCROLL (rAF throttled) ---- */
+const STEPS       = 6;
+const oScroll     = document.getElementById('oficioScroll');
+const oSteps      = document.querySelectorAll('.oficio-step');
+const oBgs        = document.querySelectorAll('.oficio-bg');
+const oDots       = document.querySelectorAll('.oficio-dot');
+const oBarFill    = document.getElementById('oficioBarFill');
+const tahonaVideo = document.querySelector('.tahona-video');
+let   curStep     = 0;
+let   oficioRaf   = 0;
 
 function goToStep(idx) {
   if (idx === curStep && document.querySelector('.oficio-step.on')) return;
@@ -1936,14 +2307,22 @@ function goToStep(idx) {
   oBgs.forEach((el,   i) => el.classList.toggle('on', i === idx));
   oDots.forEach((el,  i) => el.classList.toggle('on', i === idx));
   oBarFill.style.width = ((idx + 1) / STEPS * 100) + '%';
+  // Video de tahona: solo si step 2 activo y no reduced-motion
+  if (tahonaVideo && !REDUCED_MOTION) {
+    if (idx === 2) { tahonaVideo.play().catch(() => {}); }
+    else { tahonaVideo.pause(); }
+  }
 }
 
 window.addEventListener('scroll', () => {
-  if (!oScroll) return;
-  const rect  = oScroll.getBoundingClientRect();
-  const total = oScroll.offsetHeight - window.innerHeight;
-  const prog  = Math.max(0, Math.min(1, -rect.top / total));
-  goToStep(Math.min(Math.floor(prog * STEPS), STEPS - 1));
+  if (!oScroll || oficioRaf) return;
+  oficioRaf = requestAnimationFrame(() => {
+    const rect  = oScroll.getBoundingClientRect();
+    const total = oScroll.offsetHeight - window.innerHeight;
+    const prog  = Math.max(0, Math.min(1, -rect.top / total));
+    goToStep(Math.min(Math.floor(prog * STEPS), STEPS - 1));
+    oficioRaf = 0;
+  });
 }, { passive:true });
 
 oDots.forEach(dot => {
@@ -1951,7 +2330,7 @@ oDots.forEach(dot => {
     const g     = parseInt(dot.dataset.goto);
     const top   = oScroll.getBoundingClientRect().top + window.scrollY;
     const total = oScroll.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: top + (g / STEPS) * total, behavior:'smooth' });
+    window.scrollTo({ top: top + (g / STEPS) * total, behavior: REDUCED_MOTION ? 'auto' : 'smooth' });
   });
 });
 </script>

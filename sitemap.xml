@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://casa1919.mx/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://casa1919.mx/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://casa1919.mx/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casa1919.mx/"/>
+    <image:image>
+      <image:loc>https://casa1919.mx/assets/botella-amatitan.jpg</image:loc>
+      <image:title>Casa 1919 · Tequila Blanco 750 ml</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://casa1919.mx/assets/botella-atardecer.jpg</image:loc>
+      <image:title>Casa 1919 — Campo de agaves, Amatitán</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://casa1919.mx/aviso-privacidad</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://casa1919.mx/terminos</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://casa1919.mx/cookies</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

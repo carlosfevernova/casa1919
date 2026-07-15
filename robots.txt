@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /aviso-privacidad
+Disallow: /terminos
+Disallow: /cookies
+
+Sitemap: https://casa1919.mx/sitemap.xml

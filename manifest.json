@@ -1,0 +1,21 @@
+{
+  "name": "Casa 1919 · Tequila Blanco",
+  "short_name": "Casa 1919",
+  "description": "Tequila Blanco de producción artesanal. Tres generaciones de oficio en Amatitán, Jalisco.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#072e52",
+  "theme_color": "#072e52",
+  "lang": "es-MX",
+  "categories": ["lifestyle", "food"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
